@@ -2,11 +2,12 @@ import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import { remarkReadingTime } from './src/utils/readTime.ts'
+import { remarkReadingTime } from '@/utils'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://nirzaf.github.io/dotnetblogs/', // Write here your website url
+	// Write here your website url
+	site: 'https://nirzaf.github.io/dotnetblogs/', 
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,
