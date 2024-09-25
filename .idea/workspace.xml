@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/content/blog/graph-in-csharp.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/editBlog.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editBlog.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/create-astro-component.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/blog/create-astro-component.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/content/blog/macbook.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/blog/macbook.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/categories.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/tags/[...tag]/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/tags/[...tag]/index.astro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tina/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tina/config.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="changing-content" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nirzaf&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nirzaf/dotnetblogs.git&quot;,
+    &quot;accountId&quot;: &quot;5ed92374-9d5c-4123-b852-5f0a5c3534cf&quot;
+  }
+}</component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2mLch2iUOytmeLOo9V0ErpJBgju" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.CodyAccountHistoryMigration": "true",
+    "RunOnceActivity.CodyAccountsIdsRefresh": "true",
+    "RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount": "true",
+    "RunOnceActivity.CodyConvertUrlToCodebaseName": "true",
+    "RunOnceActivity.CodyHistoryLlmMigration": "true",
+    "RunOnceActivity.CodyMigrateChatHistory-v2": "true",
+    "RunOnceActivity.CodyProjectSettingsMigration": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.ToggleCodyToolWindowAfterMigration": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/THIS PC/RiderProjects/dotnetblogs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.start.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\THIS PC\\RiderProjects\\dotnetblogs\\node_modules\\prettier",
+    "ts.external.directory.path": "C:\\Users\\THIS PC\\RiderProjects\\dotnetblogs\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.22855.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="" />
+      <created>1726859432857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726859432857</updated>
+      <workItem from="1726859433798" duration="2618000" />
+      <workItem from="1726862715848" duration="3053000" />
+      <workItem from="1726914103038" duration="5057000" />
+      <workItem from="1727270636536" duration="1063000" />
+      <workItem from="1727281560906" duration="3239000" />
+      <workItem from="1727285499597" duration="2820000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
+      <option name="closed" value="true" />
+      <created>1726863177050</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726863177051</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix(README.md): Fix incorrect closing tag">
+      <option name="closed" value="true" />
+      <created>1726863212681</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726863212681</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: Update site configuration with new author and title, adjust read time calculation">
+      <option name="closed" value="true" />
+      <created>1726863283501</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726863283501</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat(.idea): add Cody history and code style configuration">
+      <option name="closed" value="true" />
+      <created>1726864613703</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1726864613703</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: update blog categories and config for dotNET">
+      <option name="closed" value="true" />
+      <created>1726864652237</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726864652237</updated>
+    </task>
+    <task id="LOCAL-00006" summary="style: Remove unnecessary comment in style">
+      <option name="closed" value="true" />
+      <created>1726864791749</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1726864791749</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat(blog): update blog category and add new files for blog configuration">
+      <option name="closed" value="true" />
+      <created>1726864848929</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726864848929</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="feat: add new blog post 'Graphs in C#' in category 'dotNET'" />
+    <MESSAGE value="feat(.idea): add .gitignore file for IntelliJ IDEA files" />
+    <MESSAGE value="fix(README.md): Fix incorrect closing tag" />
+    <MESSAGE value="feat: Update site configuration with new author and title, adjust read time calculation" />
+    <MESSAGE value="feat(.idea): add Cody history and code style configuration" />
+    <MESSAGE value="feat: update blog categories and config for dotNET" />
+    <MESSAGE value="style: Remove unnecessary comment in style" />
+    <MESSAGE value="feat(blog): update blog category and add new files for blog configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): update blog category and add new files for blog configuration" />
+  </component>
+</project>
