@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/content/blog/graph-in-csharp.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/editBlog.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/editBlog.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/blog/create-astro-component.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/blog/create-astro-component.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/content/blog/macbook.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/blog/macbook.mdx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/categories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/categories.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/tags/[...tag]/index.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/tags/[...tag]/index.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tina/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tina/config.ts" afterDir="false" />
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat: Update dependencies and modify code to accommodate version changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +99,7 @@
       <workItem from="1726914103038" duration="5057000" />
       <workItem from="1727270636536" duration="1063000" />
       <workItem from="1727281560906" duration="3239000" />
-      <workItem from="1727285499597" duration="2820000" />
+      <workItem from="1727285499597" duration="3958000" />
     </task>
     <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
       <option name="closed" value="true" />
@@ -165,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726864848929</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: Update dependencies and modify code to accommodate version changes">
+      <option name="closed" value="true" />
+      <created>1727288609654</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1727288609654</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +184,7 @@
     <MESSAGE value="feat: update blog categories and config for dotNET" />
     <MESSAGE value="style: Remove unnecessary comment in style" />
     <MESSAGE value="feat(blog): update blog category and add new files for blog configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): update blog category and add new files for blog configuration" />
+    <MESSAGE value="feat: Update dependencies and modify code to accommodate version changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Update dependencies and modify code to accommodate version changes" />
   </component>
 </project>
