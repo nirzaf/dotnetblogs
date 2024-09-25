@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="Please provide me with the output of the `git diff --staged` command and the branch name. I will then generate a commit message following the Conventional Commits convention." />
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat(blog): Remove unused blog post and update configuration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +100,7 @@
       <workItem from="1726914103038" duration="5057000" />
       <workItem from="1727270636536" duration="1063000" />
       <workItem from="1727281560906" duration="3239000" />
-      <workItem from="1727285499597" duration="4338000" />
+      <workItem from="1727285499597" duration="4677000" />
     </task>
     <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
       <option name="closed" value="true" />
@@ -190,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727291410977</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat(blog): Remove unused blog post and update configuration">
+      <option name="closed" value="true" />
+      <created>1727291583208</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1727291583208</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +221,7 @@
     <MESSAGE value="feat: Update dependencies and modify code for version changes" />
     <MESSAGE value="Fix: Normalize tags format (main)&#10;&#10;This commit normalizes the tags format in markdown files to&#10;use a single-line array syntax.&#10;&#10;This change improves consistency and readability." />
     <MESSAGE value="Please provide me with the output of the `git diff --staged` command and the branch name. I will then generate a commit message following the Conventional Commits convention." />
-    <option name="LAST_COMMIT_MESSAGE" value="Please provide me with the output of the `git diff --staged` command and the branch name. I will then generate a commit message following the Conventional Commits convention." />
+    <MESSAGE value="feat(blog): Remove unused blog post and update configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): Remove unused blog post and update configuration" />
   </component>
 </project>
