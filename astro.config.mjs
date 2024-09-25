@@ -6,8 +6,8 @@ import { remarkReadingTime } from '@/utils'
 
 // https://astro.build/config
 export default defineConfig({
-	// Write here your website url
-	site: 'https://nirzaf.github.io/dotnetblogs/', 
+	// Correct site configuration for GitHub Pages subfolder
+	site: 'https://nirzaf.github.io/',
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,
