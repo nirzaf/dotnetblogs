@@ -65,7 +65,11 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: |
-          ${{ steps.detect-package-manager.outputs.manager }} install --no-frozen-lockfile
+          if [ "${{ steps.detect-package-manager.outputs.manager }}" = "pnpm" ]; then
+            pnpm install --no-frozen-lockfile
+          else
+            ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+          fi
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="Updates site URL and base path for GitHub Pages.">
-      <change beforePath="$PROJECT_DIR$/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.mjs" afterDir="false" />
-    </list>
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat: Update site URL and base path for GitHub Pages." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +100,7 @@
       <workItem from="1726914103038" duration="5057000" />
       <workItem from="1727270636536" duration="1063000" />
       <workItem from="1727281560906" duration="3239000" />
-      <workItem from="1727285499597" duration="6298000" />
+      <workItem from="1727285499597" duration="6790000" />
     </task>
     <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
       <option name="closed" value="true" />
@@ -248,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727293110682</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: Update site URL and base path for GitHub Pages.">
+      <option name="closed" value="true" />
+      <created>1727293578611</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1727293578611</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +281,7 @@
     <MESSAGE value="fix(astro.config.mjs): Correct site configuration for GitHub Pages subfolder" />
     <MESSAGE value="feat(astro.config.mjs): Update site URL and base path for GitHub Pages subfolder" />
     <MESSAGE value="Updates site URL and base path for GitHub Pages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates site URL and base path for GitHub Pages." />
+    <MESSAGE value="feat: Update site URL and base path for GitHub Pages." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Update site URL and base path for GitHub Pages." />
   </component>
 </project>
