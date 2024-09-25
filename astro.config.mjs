@@ -7,7 +7,8 @@ import { remarkReadingTime } from './src/utils/readTime'
 // https://astro.build/config
 export default defineConfig({
 	// Write here your website url
-	site: 'dotnetblogs.vercel.app', 
+	site: 'https://dotnetblogs.vercel.app', 
+	base: '/', // Remove the trailing slash
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,
