@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/content/blog/astro.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/blog/astro.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +74,7 @@
     "nodejs_package_manager_path": "pnpm",
     "npm.start.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\THIS PC\\RiderProjects\\dotnetblogs\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.codegpt.services.codegpt",
+    "settings.editor.selected.configurable": "settings.codegpt.services.azure",
     "ts.external.directory.path": "C:\\Users\\THIS PC\\RiderProjects\\dotnetblogs\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -114,6 +114,10 @@
       <workItem from="1727285499597" duration="6790000" />
       <workItem from="1727355993752" duration="1011000" />
       <workItem from="1727376502229" duration="5652000" />
+      <workItem from="1727387093204" duration="1114000" />
+      <workItem from="1727388256093" duration="139000" />
+      <workItem from="1727388523771" duration="148000" />
+      <workItem from="1727388701160" duration="806000" />
     </task>
     <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
       <option name="closed" value="true" />
@@ -307,7 +311,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727383989240</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="feat(build): update dependencies and site config">
+      <option name="closed" value="true" />
+      <created>1727387215679</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1727387215679</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +362,8 @@
     <MESSAGE value="feat: Update site URL in astro.config.mjs" />
     <MESSAGE value="feat: Update site URL and base path in astro.config.mjs" />
     <MESSAGE value="feat(build): update slate and dependencies versions" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(build): update slate and dependencies versions" />
+    <MESSAGE value="feat(build): update dependencies and site config" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(build): update dependencies and site config" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
