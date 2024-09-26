@@ -8,7 +8,7 @@ import { remarkReadingTime } from './src/utils/readTime'
 export default defineConfig({
 	// Write here your website url
 	site: 'https://dotnetblogs.vercel.app', 
-	base: '/', // Remove the trailing slash
+	base: '/',
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,
