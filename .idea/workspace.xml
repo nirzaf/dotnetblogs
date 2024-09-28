@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat: integrate with tina cms (#11)&#10;&#10;Integrate Tina CMS with Astro for content management.&#10;&#10;This commit introduces Tina CMS to the project, providing a user-friendly interface for managing blog content.&#10;&#10;The integration includes:&#10;&#10;- Installing necessary Tina CMS dependencies&#10;- Configuring Tina CMS with an indexer token" />
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat: integrate Tina CMS for content management">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tina/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tina/config.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +146,7 @@
       <workItem from="1727388256093" duration="139000" />
       <workItem from="1727388523771" duration="148000" />
       <workItem from="1727388701160" duration="1870000" />
-      <workItem from="1727512884810" duration="7580000" />
+      <workItem from="1727512884810" duration="8839000" />
     </task>
     <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
       <option name="closed" value="true" />
@@ -481,7 +484,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727524800139</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="feat: integrate Tina CMS for content management">
+      <option name="closed" value="true" />
+      <created>1727525036178</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1727525036178</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +514,6 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fix(astro.config.mjs): Correct site configuration for GitHub Pages subfolder" />
     <MESSAGE value="feat(astro.config.mjs): Update site URL and base path for GitHub Pages subfolder" />
     <MESSAGE value="Updates site URL and base path for GitHub Pages." />
     <MESSAGE value="feat: Update site URL and base path for GitHub Pages." />
@@ -528,7 +538,8 @@
     <MESSAGE value="feat: updates package dependencies and peerDependencies for various packages including vite, web-vitals, yargs-parser, and zustand" />
     <MESSAGE value="feat: update package dependencies and peerDependencies for various packages including vite, web-vitals, yargs-parser, and zustand" />
     <MESSAGE value="feat: integrate with tina cms (#11)&#10;&#10;Integrate Tina CMS with Astro for content management.&#10;&#10;This commit introduces Tina CMS to the project, providing a user-friendly interface for managing blog content.&#10;&#10;The integration includes:&#10;&#10;- Installing necessary Tina CMS dependencies&#10;- Configuring Tina CMS with an indexer token" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: integrate with tina cms (#11)&#10;&#10;Integrate Tina CMS with Astro for content management.&#10;&#10;This commit introduces Tina CMS to the project, providing a user-friendly interface for managing blog content.&#10;&#10;The integration includes:&#10;&#10;- Installing necessary Tina CMS dependencies&#10;- Configuring Tina CMS with an indexer token" />
+    <MESSAGE value="feat: integrate Tina CMS for content management" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: integrate Tina CMS for content management" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
