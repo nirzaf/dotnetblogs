@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat: updates package dependencies and peerDependencies for various packages including vite, web-vitals, yargs-parser, and zustand" />
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat: integrate with tina cms (#11)&#10;&#10;Integrate Tina CMS with Astro for content management.&#10;&#10;This commit introduces Tina CMS to the project, providing a user-friendly interface for managing blog content.&#10;&#10;The integration includes:&#10;&#10;- Installing necessary Tina CMS dependencies&#10;- Configuring Tina CMS with an indexer token" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +70,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
-    "npm.build.executor": "Debug",
+    "npm.build.executor": "Run",
     "npm.preview.executor": "Run",
     "npm.start.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\THIS PC\\RiderProjects\\dotnetblogs\\node_modules\\prettier",
@@ -143,7 +143,7 @@
       <workItem from="1727388256093" duration="139000" />
       <workItem from="1727388523771" duration="148000" />
       <workItem from="1727388701160" duration="1870000" />
-      <workItem from="1727512884810" duration="7120000" />
+      <workItem from="1727512884810" duration="7580000" />
     </task>
     <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
       <option name="closed" value="true" />
@@ -465,7 +465,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727524418835</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="feat: update package dependencies and peerDependencies for various packages including vite, web-vitals, yargs-parser, and zustand">
+      <option name="closed" value="true" />
+      <created>1727524559525</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1727524559525</updated>
+    </task>
+    <task id="LOCAL-00042" summary="feat: integrate with tina cms (#11)&#10;&#10;Integrate Tina CMS with Astro for content management.&#10;&#10;This commit introduces Tina CMS to the project, providing a user-friendly interface for managing blog content.&#10;&#10;The integration includes:&#10;&#10;- Installing necessary Tina CMS dependencies&#10;- Configuring Tina CMS with an indexer token&#10;- Enabling Tina CMS for Markdown content&#10;&#10;This change enhances content management capabilities and streamlines the blogging workflow.">
+      <option name="closed" value="true" />
+      <created>1727524800139</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1727524800139</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,8 +503,6 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Please provide me with the output of the `git diff --staged` command and the branch name. I will then generate a commit message following the Conventional Commits convention." />
-    <MESSAGE value="feat(blog): Remove unused blog post and update configuration" />
     <MESSAGE value="fix(astro.config.mjs): Correct site configuration for GitHub Pages subfolder" />
     <MESSAGE value="feat(astro.config.mjs): Update site URL and base path for GitHub Pages subfolder" />
     <MESSAGE value="Updates site URL and base path for GitHub Pages." />
@@ -512,7 +526,9 @@
     <MESSAGE value="Add new blog post on C# 13 Extensions feature and update categories list" />
     <MESSAGE value="feat(content): update blog post &quot;The New Extensions Everything Feature of C# 13&quot;" />
     <MESSAGE value="feat: updates package dependencies and peerDependencies for various packages including vite, web-vitals, yargs-parser, and zustand" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: updates package dependencies and peerDependencies for various packages including vite, web-vitals, yargs-parser, and zustand" />
+    <MESSAGE value="feat: update package dependencies and peerDependencies for various packages including vite, web-vitals, yargs-parser, and zustand" />
+    <MESSAGE value="feat: integrate with tina cms (#11)&#10;&#10;Integrate Tina CMS with Astro for content management.&#10;&#10;This commit introduces Tina CMS to the project, providing a user-friendly interface for managing blog content.&#10;&#10;The integration includes:&#10;&#10;- Installing necessary Tina CMS dependencies&#10;- Configuring Tina CMS with an indexer token" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: integrate with tina cms (#11)&#10;&#10;Integrate Tina CMS with Astro for content management.&#10;&#10;This commit introduces Tina CMS to the project, providing a user-friendly interface for managing blog content.&#10;&#10;The integration includes:&#10;&#10;- Installing necessary Tina CMS dependencies&#10;- Configuring Tina CMS with an indexer token" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
