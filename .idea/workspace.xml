@@ -6,7 +6,107 @@
   <component name="ChangeListManager">
     <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat: integrate Tina CMS for content management">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tina/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tina/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/astro.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/astro.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/_slug_.DsnDuvJ0.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/banner.BelI91fy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/banner.BelI91fy_Z11rx4A.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/banner.BelI91fy_Z1DI6KW.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/banner.BelI91fy_Z1TfxjP.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/bg.BLmUMqKA.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/bg.BLmUMqKA_1u2f0X.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/bg.BLmUMqKA_BeeKI.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/bg.BLmUMqKA_ZpjCFw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/blog-with-code.dPZVu_Ug.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/hoisted.-D70uRKN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/hoisted.4EzFgn-P.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/hoisted.B68kK8tK.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/hoisted.XIFW5_jD.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/placeholder-about.DCrJptMi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/placeholder-about.DCrJptMi_1HtJ70.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/placeholder-about.DCrJptMi_1yR5i6.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/placeholder-about.DCrJptMi_2rF5xl.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/placeholder-hero.ZqYaJ2Hs.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/placeholder-hero.ZqYaJ2Hs_2rbCk0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/placeholder-hero.ZqYaJ2Hs_Z1WGzE2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/te.DucztPaz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/te.DucztPaz_12zFxr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/te.DucztPaz_3PEC5.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/te.DucztPaz_ZNWkCa.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/_astro/ui-core.CpisCE5N.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/admin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/blog-with-code/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/category/.net/1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/category/category-1/1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/category/category-2/1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/category/category-3/1/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/favicon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/Manrope-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/Manrope-ExtraBold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/Manrope-ExtraLight.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/Manrope-Light.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/Manrope-Medium.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/Manrope-Regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/fonts/Manrope-SemiBold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/open-graph.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/openblog-lighthouse-score.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_1052d24.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_20a49d1.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_32aa277.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_3b42762.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_4e244ee.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_5950a36.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_6173558.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_679eade.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_68cfaa4.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_6d2862e.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_77fdb30.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_7dad207.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_8972926.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_b67aabb.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_b7ec45d.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_c9925c4.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_ca33769.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_ccc3fc6.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_cf26367.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_dd89b32.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/fragment/en_fd939d2.pf_fragment" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/index/en_f22af3f.pf_index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/pagefind-entry.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/pagefind-highlight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/pagefind-modular-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/pagefind-modular-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/pagefind-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/pagefind-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/pagefind.en_2ca84da154.pf_meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/pagefind.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/wasm.en.pagefind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/pagefind/wasm.unknown.pagefind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/post/astro-copy-2/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/post/astro-copy-3/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/post/astro-copy-4/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/post/astro/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/post/create-astro-component/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/post/graph-in-csharp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/project.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/rss.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sitemap-0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/sitemap-index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tags/algorithms/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tags/css/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tags/data structures/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tags/github/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tags/graphs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tags/html5/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tags/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tags/javascript/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tags/ordenador/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/tags/programming/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tina/config.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +182,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="npm.build">
+  <component name="RunManager" selected="npm.preview">
     <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -146,7 +246,7 @@
       <workItem from="1727388256093" duration="139000" />
       <workItem from="1727388523771" duration="148000" />
       <workItem from="1727388701160" duration="1870000" />
-      <workItem from="1727512884810" duration="8839000" />
+      <workItem from="1727512884810" duration="10496000" />
     </task>
     <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
       <option name="closed" value="true" />
@@ -492,7 +592,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727525036178</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="feat: integrate Tina CMS for content management">
+      <option name="closed" value="true" />
+      <created>1727531949087</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1727531949087</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
