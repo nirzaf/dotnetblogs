@@ -16,18 +16,17 @@
 ## � Table Of Contents
 
 1. [Demo](#-Demo)
-2. [CMS](#-Tina-CMS)
-3. [Features](#-Features)
-4. [Roadmap](#-Roadmap)
-5. [Stack](#-Stack)
-6. [Running locally](#-Running-Locally)
-7. [Configure](#-Configure)
-8. [Categories](#-Adding-a-category)
-9. [Posts](#-Adding-a-post)
-10. [Draft](#-Activating-draft-mode)
-11. [FrontMatter](#-Frontmatter)
-12. [CLI](#-Commands)
-13. [Contributors](#-Contributors)
+2. [Features](#-Features)
+3. [Roadmap](#-Roadmap)
+4. [Stack](#-Stack)
+5. [Running locally](#-Running-Locally)
+6. [Configure](#-Configure)
+7. [Categories](#-Adding-a-category)
+8. [Posts](#-Adding-a-post)
+9. [Draft](#-Activating-draft-mode)
+10. [FrontMatter](#-Frontmatter)
+11. [CLI](#-Commands)
+12. [Contributors](#-Contributors)
 
 ## � Demo
 
@@ -35,22 +34,6 @@ Check out the [Demo](https://blog-template-gray.vercel.app/), hosted on Vercel
 <br/>
 
 https://github.com/danielcgilibert/blog-template/assets/44746462/56b8399e-cc5b-45a8-b9d2-d69833ecadb1
-
-## � Tina CMS
-
-By default, this template comes pre-configured with Tina CMS.
-
-Now you can create your posts directly from the CMS without the need to do it manually.
-
-If you decide to use Tina, it's not necessary to add any properties to the Markdown files, Tina does it automatically.
-
-Example:
-
-https://github.com/danielcgilibert/blog-template/assets/44746462/51ae324c-d383-40be-9b16-db159d1af15d
-
-The documentation for Tina CMS can be found [here](https://tina.io/docs/)
-
-> Tina is completely optional, and you can remove it, and it will still function in the same way.
 
 ## � Features:
 
@@ -77,7 +60,6 @@ The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 - ✅ Share posts (Linkedin, twitter)
 - ✅ Draft mode
 - ✅ Copy code block
-- ✅ CMS in the repository (Tina CMS)
 - ✅ Pagination
 - ✅ ViewTransition (new)
 - ✅ Disqus comments (new)
@@ -99,7 +81,6 @@ The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 - [**Prettier**](https://prettier.io/) - Code formatter.
 - [**Search Library**](https://pagefind.app/) - Static search library integration.
 - [**Motion**](https://motion.dev/) - Motion One is the smallest fully-featured animation library for the web.
-- [**Tina CMS**](https://tina.io/) - CMS.
 
 ## 👨🏻‍💻 Running Locally
 
