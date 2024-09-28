@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat(blog): update blog theme and layout" />
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat(blog): update blog theme and layout">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/post.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,15 +147,7 @@
       <workItem from="1727388256093" duration="139000" />
       <workItem from="1727388523771" duration="148000" />
       <workItem from="1727388701160" duration="1870000" />
-      <workItem from="1727512884810" duration="13525000" />
-    </task>
-    <task id="LOCAL-00003" summary="feat: Update site configuration with new author and title, adjust read time calculation">
-      <option name="closed" value="true" />
-      <created>1726863283501</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1726863283501</updated>
+      <workItem from="1727512884810" duration="14060000" />
     </task>
     <task id="LOCAL-00004" summary="feat(.idea): add Cody history and code style configuration">
       <option name="closed" value="true" />
@@ -537,7 +533,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727536513005</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="feat(blog): update blog theme and layout">
+      <option name="closed" value="true" />
+      <created>1727536801220</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1727536801220</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

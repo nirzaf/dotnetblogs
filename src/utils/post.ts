@@ -22,7 +22,7 @@ export const getTags = async () => {
 		.filter((post) => !post.data.draft)
 		.forEach((post) => {
 			post.data.tags.forEach((tag) => {
-				tags.add(tag.toLowerCase())
+				tags.add(tag.toLowerCase().replace(/[^a-z0-9]/g, '-'))
 			})
 		})
 
