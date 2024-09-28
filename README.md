@@ -13,7 +13,7 @@
 
 </div>
 
-## 📌 Table Of Contents
+## � Table Of Contents
 
 1. [Demo](#-Demo)
 2. [CMS](#-Tina-CMS)
@@ -29,14 +29,14 @@
 12. [CLI](#-Commands)
 13. [Contributors](#-Contributors)
 
-## 💻 Demo
+## � Demo
 
 Check out the [Demo](https://blog-template-gray.vercel.app/), hosted on Vercel
 <br/>
 
 https://github.com/danielcgilibert/blog-template/assets/44746462/56b8399e-cc5b-45a8-b9d2-d69833ecadb1
 
-## 🦙 Tina CMS
+## � Tina CMS
 
 By default, this template comes pre-configured with Tina CMS.
 
@@ -52,7 +52,7 @@ The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 
 > Tina is completely optional, and you can remove it, and it will still function in the same way.
 
-## 💪 Features:
+## � Features:
 
 <p align="center">
   <a href="https://pagespeed.web.dev/analysis/https-blog-template-gray-vercel-app/7ovjfewos9?form_factor=mobile">
@@ -82,7 +82,7 @@ The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 - ✅ ViewTransition (new)
 - ✅ Disqus comments (new)
 
-## 🛣️ Roadmap
+## � Roadmap
 
 - ❌ Add post author
 - ❌ Add customization with colors
@@ -90,7 +90,7 @@ The documentation for Tina CMS can be found [here](https://tina.io/docs/)
 - ❌ More sharing options
 - ❌ Internationalization (i18n)
 
-## ⚙️ Stack
+## � Stack
 
 - [**ASTRO** + **Typescript**](https://astro.build/) - Astro is the all-in-one web framework designed for speed.
 - [**Tailwind CSS** + **Tailwind-Merge** + **clsx**](https://tailwindcss.com/) - Tailwind CSS is a utility-first CSS framework.
