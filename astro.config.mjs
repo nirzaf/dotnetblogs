@@ -2,18 +2,12 @@ import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-import { remarkReadingTime } from './src/utils/readTime'
-import vercel from '@astrojs/vercel/serverless'
+import { remarkReadingTime } from './src/utils/readTime.ts'
+import tina from 'astro-tina';
 
 // https://astro.build/config
 export default defineConfig({
-	// Write here your website url
-	site: 'https://dotnetblogs.vercel.app', 
-	base: '/',
-	output: 'server',
-	adapter: vercel({
-		webAnalytics: { enabled: true }
-	}),
+	site: 'https://blog-template-gray.vercel.app/', // Write here your website url
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,
@@ -29,12 +23,15 @@ export default defineConfig({
 				experimentalThemes: {
 					light: 'vitesse-light',
 					dark: 'material-theme-palenight',
-				},
+				  },
 				wrap: true
 			},
 			drafts: true
 		}),
 		sitemap(),
-		tailwind()
+		tailwind(),
+		tina({
+			indexerToken: import.meta.env.TINA_INDEXER_TOKEN,
+		})
 	]
 })
