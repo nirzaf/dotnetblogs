@@ -48,25 +48,17 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-          cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Install dependencies
-        run: |
-          if [ "${{ steps.detect-package-manager.outputs.manager }}" = "pnpm" ]; then
-            pnpm install --no-frozen-lockfile
-          else
-            ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-          fi
-        working-directory: ${{ env.BUILD_PATH }}
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}" \
             --outDir dist
-        working-directory: ${{ env.BUILD_PATH }}/../
       - name: Astro Deploy
         uses: withastro/action@v2.0.0
         with:

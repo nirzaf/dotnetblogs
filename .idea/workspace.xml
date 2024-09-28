@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat(.gitignore): added build output and dist/ directories to .gitignore">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy-to-pages.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy-to-pages.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +72,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
+    "npm.build.executor": "Run",
+    "npm.preview.executor": "Run",
     "npm.start.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\THIS PC\\RiderProjects\\dotnetblogs\\node_modules\\prettier",
     "settings.editor.selected.configurable": "settings.codegpt.services.azure",
@@ -79,7 +81,27 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="preview" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="preview" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -90,6 +112,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.build" />
+      <item itemvalue="npm.preview" />
+      <item itemvalue="npm.start" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -118,6 +145,7 @@
       <workItem from="1727388256093" duration="139000" />
       <workItem from="1727388523771" duration="148000" />
       <workItem from="1727388701160" duration="1870000" />
+      <workItem from="1727512884810" duration="2622000" />
     </task>
     <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
       <option name="closed" value="true" />
@@ -327,7 +355,55 @@
       <option name="project" value="LOCAL" />
       <updated>1727392855746</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="chore: Update workspace.xml (main)&#10;&#10;Update workspace.xml with recent changes and tasks&#10;&#10;- Add new change entry for workspace.xml&#10;- Update selected editor configuration&#10;- Log recent work items&#10;- Add new task for build updates&#10;- Update last commit message">
+      <option name="closed" value="true" />
+      <created>1727513204870</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1727513204870</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: adds new page for data structures tag">
+      <option name="closed" value="true" />
+      <created>1727514714541</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1727514714541</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: Update font fallback in HTML files">
+      <option name="closed" value="true" />
+      <created>1727515185054</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1727515185054</updated>
+    </task>
+    <task id="LOCAL-00030" summary="chore: Remove FUNDING.yml file">
+      <option name="closed" value="true" />
+      <created>1727515259607</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1727515259607</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat: Add deploy workflow (main)&#10;&#10;Add a GitHub Actions workflow to deploy the Astro site to GitHub Pages &#10;on every push to the 'main' branch. The workflow will build the site &#10;using Astro and then upload the generated 'dist' folder as an artifact.">
+      <option name="closed" value="true" />
+      <created>1727515606728</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1727515606728</updated>
+    </task>
+    <task id="LOCAL-00032" summary="feat(.gitignore): added build output and dist/ directories to .gitignore">
+      <option name="closed" value="true" />
+      <created>1727516121621</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1727516121621</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,11 +425,6 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="feat: add new blog post 'Graphs in C#' in category 'dotNET'" />
-    <MESSAGE value="feat(.idea): add .gitignore file for IntelliJ IDEA files" />
-    <MESSAGE value="fix(README.md): Fix incorrect closing tag" />
-    <MESSAGE value="feat: Update site configuration with new author and title, adjust read time calculation" />
-    <MESSAGE value="feat(.idea): add Cody history and code style configuration" />
     <MESSAGE value="feat: update blog categories and config for dotNET" />
     <MESSAGE value="style: Remove unnecessary comment in style" />
     <MESSAGE value="feat(blog): update blog category and add new files for blog configuration" />
@@ -372,7 +443,14 @@
     <MESSAGE value="feat(build): update slate and dependencies versions" />
     <MESSAGE value="feat(build): update dependencies and site config" />
     <MESSAGE value="Update workspace.xml with recent changes and tasks&#10;&#10;- Add new change entry for workspace.xml&#10;- Update selected editor configuration&#10;- Log recent work items&#10;- Add new task for build updates&#10;- Update last commit message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update workspace.xml with recent changes and tasks&#10;&#10;- Add new change entry for workspace.xml&#10;- Update selected editor configuration&#10;- Log recent work items&#10;- Add new task for build updates&#10;- Update last commit message" />
+    <MESSAGE value="chore: Update workspace.xml (main)&#10;&#10;Update workspace.xml with recent changes and tasks&#10;&#10;- Add new change entry for workspace.xml&#10;- Update selected editor configuration&#10;- Log recent work items&#10;- Add new task for build updates&#10;- Update last commit message" />
+    <MESSAGE value="feat: adds PagefindUI class for initializing and controlling the Pagefind UI" />
+    <MESSAGE value="feat: adds new page for data structures tag" />
+    <MESSAGE value="feat: Update font fallback in HTML files" />
+    <MESSAGE value="chore: Remove FUNDING.yml file" />
+    <MESSAGE value="feat: Add deploy workflow (main)&#10;&#10;Add a GitHub Actions workflow to deploy the Astro site to GitHub Pages &#10;on every push to the 'main' branch. The workflow will build the site &#10;using Astro and then upload the generated 'dist' folder as an artifact." />
+    <MESSAGE value="feat(.gitignore): added build output and dist/ directories to .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(.gitignore): added build output and dist/ directories to .gitignore" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
