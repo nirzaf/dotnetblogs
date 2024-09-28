@@ -3,12 +3,17 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import { remarkReadingTime } from './src/utils/readTime'
+import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
 	// Write here your website url
 	site: 'https://dotnetblogs.vercel.app', 
 	base: '/',
+	output: 'server',
+	adapter: vercel({
+		webAnalytics: { enabled: true }
+	}),
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,
@@ -24,7 +29,7 @@ export default defineConfig({
 				experimentalThemes: {
 					light: 'vitesse-light',
 					dark: 'material-theme-palenight',
-				  },
+				},
 				wrap: true
 			},
 			drafts: true
