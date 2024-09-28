@@ -4,38 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat: Update metadata and font styles in multiple HTML files">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/category/.net/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/category/.net/1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/category/category-1/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/category/category-1/1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/category/category-2/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/category/category-2/1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/category/category-3/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/category/category-3/1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/post/astro-copy-2/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/post/astro-copy-3/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/post/astro-copy-4/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/post/astro/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/post/create-astro-component/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/post/graph-in-csharp/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/rss.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tags/algorithms/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tags/css/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tags/data structures/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tags/github/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tags/graphs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tags/html5/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tags/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tags/javascript/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tags/ordenador/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tags/programming/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/editBlog.astro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/BaseLayout.astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/BaseLayout.astro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/post/[...slug].astro" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/post/[...slug].astro" afterDir="false" />
-    </list>
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat(blog): update blog theme and layout" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +33,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/THIS PC/RiderProjects/dotnetblogs/package.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="PackageJsonUpdateNotifier">
@@ -174,23 +143,7 @@
       <workItem from="1727388256093" duration="139000" />
       <workItem from="1727388523771" duration="148000" />
       <workItem from="1727388701160" duration="1870000" />
-      <workItem from="1727512884810" duration="13186000" />
-    </task>
-    <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
-      <option name="closed" value="true" />
-      <created>1726863177050</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1726863177051</updated>
-    </task>
-    <task id="LOCAL-00002" summary="fix(README.md): Fix incorrect closing tag">
-      <option name="closed" value="true" />
-      <created>1726863212681</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1726863212681</updated>
+      <workItem from="1727512884810" duration="13525000" />
     </task>
     <task id="LOCAL-00003" summary="feat: Update site configuration with new author and title, adjust read time calculation">
       <option name="closed" value="true" />
@@ -568,7 +521,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727534677353</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Generating...">
+      <option name="closed" value="true" />
+      <created>1727536480072</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1727536480073</updated>
+    </task>
+    <task id="LOCAL-00051" summary="feat(blog): update blog theme and layout">
+      <option name="closed" value="true" />
+      <created>1727536513005</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1727536513005</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,8 +559,6 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="feat: Update site URL and base path in astro.config.mjs" />
-    <MESSAGE value="feat(build): update slate and dependencies versions" />
     <MESSAGE value="feat(build): update dependencies and site config" />
     <MESSAGE value="Update workspace.xml with recent changes and tasks&#10;&#10;- Add new change entry for workspace.xml&#10;- Update selected editor configuration&#10;- Log recent work items&#10;- Add new task for build updates&#10;- Update last commit message" />
     <MESSAGE value="chore: Update workspace.xml (main)&#10;&#10;Update workspace.xml with recent changes and tasks&#10;&#10;- Add new change entry for workspace.xml&#10;- Update selected editor configuration&#10;- Log recent work items&#10;- Add new task for build updates&#10;- Update last commit message" />
@@ -615,7 +582,9 @@
     <MESSAGE value="chore(.gitignore): Update pattern to ignore dist/*" />
     <MESSAGE value="chore(.gitignore): update .gitignore pattern" />
     <MESSAGE value="feat: Update metadata and font styles in multiple HTML files" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Update metadata and font styles in multiple HTML files" />
+    <MESSAGE value="feat: Update metadata and fonts in HTML files" />
+    <MESSAGE value="feat(blog): update blog theme and layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(blog): update blog theme and layout" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
