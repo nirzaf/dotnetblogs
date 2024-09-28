@@ -1,4 +1,4 @@
-import { CATEGORIES } from '../src/data/categories.ts'
+import { CATEGORIES } from '@/data/categories.ts'
 import { defineConfig } from 'tinacms'
 
 // Your hosting provider likely exposes this as an environment variable
