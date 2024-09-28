@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat: Update Node setup in deploy-to-pages workflow" />
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat(deploy-to-pages.yml): simplify deploy workflow">
+      <change afterPath="$PROJECT_DIR$/src/content/blog/the-new-extensions-everything-feature-of-csharp-13.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +146,7 @@
       <workItem from="1727388256093" duration="139000" />
       <workItem from="1727388523771" duration="148000" />
       <workItem from="1727388701160" duration="1870000" />
-      <workItem from="1727512884810" duration="3195000" />
+      <workItem from="1727512884810" duration="5407000" />
     </task>
     <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
       <option name="closed" value="true" />
@@ -417,7 +420,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727516438740</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="feat(deploy-to-pages.yml): simplify deploy workflow">
+      <option name="closed" value="true" />
+      <created>1727518230449</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1727518230449</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +450,6 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="feat(blog): update blog category and add new files for blog configuration" />
     <MESSAGE value="feat: Update dependencies and modify code to accommodate version changes" />
     <MESSAGE value="feat: Update dependencies and modify code for version changes" />
     <MESSAGE value="Fix: Normalize tags format (main)&#10;&#10;This commit normalizes the tags format in markdown files to&#10;use a single-line array syntax.&#10;&#10;This change improves consistency and readability." />
@@ -464,7 +474,8 @@
     <MESSAGE value="feat(.gitignore): added build output and dist/ directories to .gitignore" />
     <MESSAGE value="feat(deploy-to-pages.yml): simplified deploy workflow" />
     <MESSAGE value="feat: Update Node setup in deploy-to-pages workflow" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Update Node setup in deploy-to-pages workflow" />
+    <MESSAGE value="feat(deploy-to-pages.yml): simplify deploy workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(deploy-to-pages.yml): simplify deploy workflow" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
