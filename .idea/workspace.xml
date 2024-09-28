@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat(.gitignore): added build output and dist/ directories to .gitignore">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy-to-pages.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy-to-pages.yml" afterDir="false" />
-    </list>
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat: Update Node setup in deploy-to-pages workflow" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +143,7 @@
       <workItem from="1727388256093" duration="139000" />
       <workItem from="1727388523771" duration="148000" />
       <workItem from="1727388701160" duration="1870000" />
-      <workItem from="1727512884810" duration="2622000" />
+      <workItem from="1727512884810" duration="3195000" />
     </task>
     <task id="LOCAL-00001" summary="feat(.idea): add .gitignore file for IntelliJ IDEA files">
       <option name="closed" value="true" />
@@ -403,7 +401,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727516121621</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="feat(deploy-to-pages.yml): simplified deploy workflow">
+      <option name="closed" value="true" />
+      <created>1727516281373</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1727516281373</updated>
+    </task>
+    <task id="LOCAL-00034" summary="feat: Update Node setup in deploy-to-pages workflow">
+      <option name="closed" value="true" />
+      <created>1727516438740</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1727516438740</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,8 +439,6 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="feat: update blog categories and config for dotNET" />
-    <MESSAGE value="style: Remove unnecessary comment in style" />
     <MESSAGE value="feat(blog): update blog category and add new files for blog configuration" />
     <MESSAGE value="feat: Update dependencies and modify code to accommodate version changes" />
     <MESSAGE value="feat: Update dependencies and modify code for version changes" />
@@ -450,7 +462,9 @@
     <MESSAGE value="chore: Remove FUNDING.yml file" />
     <MESSAGE value="feat: Add deploy workflow (main)&#10;&#10;Add a GitHub Actions workflow to deploy the Astro site to GitHub Pages &#10;on every push to the 'main' branch. The workflow will build the site &#10;using Astro and then upload the generated 'dist' folder as an artifact." />
     <MESSAGE value="feat(.gitignore): added build output and dist/ directories to .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(.gitignore): added build output and dist/ directories to .gitignore" />
+    <MESSAGE value="feat(deploy-to-pages.yml): simplified deploy workflow" />
+    <MESSAGE value="feat: Update Node setup in deploy-to-pages workflow" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Update Node setup in deploy-to-pages workflow" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

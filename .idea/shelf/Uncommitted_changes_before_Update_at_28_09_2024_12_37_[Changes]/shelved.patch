@@ -1,0 +1,37 @@
+Index: .github/workflows/deploy-to-pages.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>name: Deploy Astro site to Pages\r\n\r\non:\r\n  push:\r\n    branches: [\"main\"]\r\n  workflow_dispatch:\r\n\r\npermissions:\r\n  contents: read\r\n  pages: write\r\n  id-token: write\r\n\r\nconcurrency:\r\n  group: \"pages\"\r\n  cancel-in-progress: false\r\n\r\nenv:\r\n  BUILD_PATH: \"./dist\"\r\n\r\njobs:\r\n  build:\r\n    name: Build\r\n    runs-on: ubuntu-latest\r\n    steps:\r\n      - name: Checkout\r\n        uses: actions/checkout@v4\r\n      - name: Detect package manager\r\n        id: detect-package-manager\r\n        run: |\r\n          if [ -f \"${{ github.workspace }}/yarn.lock\" ]; then\r\n            echo \"manager=yarn\" >> $GITHUB_OUTPUT\r\n            echo \"command=install\" >> $GITHUB_OUTPUT\r\n            echo \"runner=yarn\" >> $GITHUB_OUTPUT\r\n            echo \"lockfile=yarn.lock\" >> $GITHUB_OUTPUT\r\n            exit 0\r\n          elif [ -f \"${{ github.workspace }}/package.json\" ]; then\r\n            echo \"manager=npm\" >> $GITHUB_OUTPUT\r\n            echo \"command=ci\" >> $GITHUB_OUTPUT\r\n            echo \"runner=npx --no-install\" >> $GITHUB_OUTPUT\r\n            echo \"lockfile=package-lock.json\" >> $GITHUB_OUTPUT\r\n            exit 0\r\n          else\r\n            echo \"Unable to determine package manager\"\r\n            exit 1\r\n          fi\r\n      - name: Setup Node\r\n        uses: actions/setup-node@v4\r\n        with:\r\n          node-version: \"20\"\r\n          cache: ${{ steps.detect-package-manager.outputs.manager }}\r\n          cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}\r\n      - name: Setup Pages\r\n        id: pages\r\n        uses: actions/configure-pages@v5\r\n      - name: Install dependencies\r\n        run: |\r\n          if [ \"${{ steps.detect-package-manager.outputs.manager }}\" = \"pnpm\" ]; then\r\n            pnpm install --no-frozen-lockfile\r\n          else\r\n            ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}\r\n          fi\r\n        working-directory: ${{ env.BUILD_PATH }}\r\n      - name: Build with Astro\r\n        run: |\r\n          ${{ steps.detect-package-manager.outputs.runner }} astro build \\\r\n            --site \"${{ steps.pages.outputs.origin }}\" \\\r\n            --base \"${{ steps.pages.outputs.base_path }}\" \\\r\n            --outDir dist\r\n        working-directory: ${{ env.BUILD_PATH }}/../\r\n      - name: Astro Deploy\r\n        uses: withastro/action@v2.0.0\r\n        with:\r\n          node-version: # optional, default is 20\r\n          package-manager: # optional, default is \r\n          path: # optional, default is .\r\n      - name: Upload artifact\r\n        uses: actions/upload-pages-artifact@v3\r\n        with:\r\n          path: ${{ env.BUILD_PATH }}\r\n\r\n  deploy:\r\n    environment:\r\n      name: github-pages\r\n      url: ${{ steps.deployment.outputs.page_url }}\r\n    needs: build\r\n    runs-on: ubuntu-latest\r\n    name: Deploy\r\n    steps:\r\n      - name: Deploy to GitHub Pages\r\n        id: deployment\r\n        uses: actions/deploy-pages@v4
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.github/workflows/deploy-to-pages.yml b/.github/workflows/deploy-to-pages.yml
+--- a/.github/workflows/deploy-to-pages.yml	(revision dc7b0ff68830029543cdb703e17ed0a03bf7094f)
++++ b/.github/workflows/deploy-to-pages.yml	(date 1727516228524)
+@@ -48,25 +48,17 @@
+         with:
+           node-version: "20"
+           cache: ${{ steps.detect-package-manager.outputs.manager }}
+-          cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
+       - name: Setup Pages
+         id: pages
+         uses: actions/configure-pages@v5
+       - name: Install dependencies
+-        run: |
+-          if [ "${{ steps.detect-package-manager.outputs.manager }}" = "pnpm" ]; then
+-            pnpm install --no-frozen-lockfile
+-          else
+-            ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+-          fi
+-        working-directory: ${{ env.BUILD_PATH }}
++        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+       - name: Build with Astro
+         run: |
+           ${{ steps.detect-package-manager.outputs.runner }} astro build \
+             --site "${{ steps.pages.outputs.origin }}" \
+             --base "${{ steps.pages.outputs.base_path }}" \
+             --outDir dist
+-        working-directory: ${{ env.BUILD_PATH }}/../
+       - name: Astro Deploy
+         uses: withastro/action@v2.0.0
+         with:
