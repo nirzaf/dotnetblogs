@@ -6,7 +6,8 @@ import { remarkReadingTime } from './src/utils/readTime.ts'
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://nirzaf.github.io/dotnetblogs/', // Write here your website url
+	site: 'https://nirzaf.github.io',
+	base: '/dotnetblogs',
 	markdown: {
 		remarkPlugins: [remarkReadingTime],
 		drafts: true,
@@ -30,6 +31,10 @@ export default defineConfig({
 		sitemap(),
 		tailwind()
 	],
-	trailingSlash: 'always'
+	trailingSlash: 'always',
+	build: {
+		format: 'file'
+	},
+	outDir: './dist'
 })
 
