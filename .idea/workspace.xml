@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="feat(blog): update blog theme and layout">
+    <list default="true" id="ece9a7c6-7f39-41b7-a7a8-9200fb626ceb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/category/.net/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/category/.net/1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/category/category-1/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/category/category-1/1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/category/category-2/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/category/category-2/1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/category/category-3/1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/category/category-3/1/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/post.ts" afterDir="false" />
@@ -78,12 +83,12 @@
     "npm.preview.executor": "Run",
     "npm.start.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\THIS PC\\RiderProjects\\dotnetblogs\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.codegpt.services.azure",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Users\\THIS PC\\RiderProjects\\dotnetblogs\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="npm.preview">
+  <component name="RunManager" selected="npm.build">
     <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -147,15 +152,8 @@
       <workItem from="1727388256093" duration="139000" />
       <workItem from="1727388523771" duration="148000" />
       <workItem from="1727388701160" duration="1870000" />
-      <workItem from="1727512884810" duration="14060000" />
-    </task>
-    <task id="LOCAL-00004" summary="feat(.idea): add Cody history and code style configuration">
-      <option name="closed" value="true" />
-      <created>1726864613703</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1726864613703</updated>
+      <workItem from="1727512884810" duration="17730000" />
+      <workItem from="1727700926260" duration="28000" />
     </task>
     <task id="LOCAL-00005" summary="feat: update blog categories and config for dotNET">
       <option name="closed" value="true" />
@@ -541,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727536801220</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="feat(blog): update blog theme and layout">
+      <option name="closed" value="true" />
+      <created>1727537297487</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1727537297488</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
