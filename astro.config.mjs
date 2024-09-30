@@ -29,6 +29,7 @@ export default defineConfig({
 		}),
 		sitemap(),
 		tailwind()
-	]
+	],
+	trailingSlash: 'always'
 })
 
