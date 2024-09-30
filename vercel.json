@@ -1,5 +1,5 @@
 {
-	"buildCommand": "npm run build && npm run postbuild",
+	"buildCommand": "npm run build",
 	"outputDirectory": "dist",
 	"framework": "astro"
 }
