@@ -37,8 +37,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1
       '@tailwindcss/typography':
-        specifier: 0.5.10
-        version: 0.5.10(tailwindcss@3.3.5)
+        specifier: 0.5.15
+        version: 0.5.15(tailwindcss@3.3.5)
       '@typescript-eslint/parser':
         specifier: ^6.21.0
         version: 6.21.0(eslint@8.57.1)(typescript@5.6.2)
@@ -734,10 +734,10 @@ packages:
   '@shikijs/vscode-textmate@9.2.2':
     resolution: {integrity: sha512-TMp15K+GGYrWlZM8+Lnj9EaHEFmOen0WJBrfa17hF7taDOYthuPPV0GWzfd/9iMij0akS/8Yw2ikquH7uVi/fg==}
 
-  '@tailwindcss/typography@0.5.10':
-    resolution: {integrity: sha512-Pe8BuPJQJd3FfRnm6H0ulKIGoMEQS+Vq01R6M5aCrFB/ccR/shT+0kXLjouGC1gFLm9hopTFN+DMP0pfwRWzPw==}
+  '@tailwindcss/typography@0.5.15':
+    resolution: {integrity: sha512-AqhlCXl+8grUz8uqExv5OTtgpjuVIwFTSXTrh8y9/pw6q2ek7fJ+Y8ZEVw7EB2DCcuCOtEjf9w3+J3rzts01uA==}
     peerDependencies:
-      tailwindcss: '>=3.0.0 || insiders'
+      tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20'
 
   '@types/acorn@4.0.6':
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
@@ -3982,7 +3982,7 @@ snapshots:
 
   '@shikijs/vscode-textmate@9.2.2': {}
 
-  '@tailwindcss/typography@0.5.10(tailwindcss@3.3.5)':
+  '@tailwindcss/typography@0.5.15(tailwindcss@3.3.5)':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
