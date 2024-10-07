@@ -18,8 +18,8 @@ importers:
         specifier: 4.15.9
         version: 4.15.9(rollup@4.22.5)(typescript@5.6.2)
       astro-font:
-        specifier: ^0.0.72
-        version: 0.0.72
+        specifier: ^0.1.81
+        version: 0.1.81
       string-width:
         specifier: ^7.2.0
         version: 7.2.0
@@ -982,8 +982,8 @@ packages:
     resolution: {integrity: sha512-CGaBseNtunAV2DCpwBXqTKq8+9Tw65XZetMaC0FsMoZuLj0gxNIkbCf2QyKYScVrNOU7/ayfNdVw8ZCSHBiqCg==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  astro-font@0.0.72:
-    resolution: {integrity: sha512-FUjIerovSg2lsfJfvvqY23hgvc++gHi69ikFkxm0mqO3MPFykK5ppeUuROUjhNbE6vwdD8MpiJOy1CR5S0g/lQ==}
+  astro-font@0.1.81:
+    resolution: {integrity: sha512-rbrv/+ZSYdgyjBlhkAqfCjMxqqo6iEwnSo/rAdDt/POILsF0ChxMFhefIIzKEukrRGtVjEj1lrLRYk+AdV9scQ==}
 
   astro@4.15.9:
     resolution: {integrity: sha512-51oXq9qrZ5OPWYmEXt1kGrvWmVeWsx28SgBTzi2XW6iwcnW/wC5ONm6ol6qBGSCF93tQvZplXvuzpaw1injECA==}
@@ -4271,7 +4271,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro-font@0.0.72: {}
+  astro-font@0.1.81: {}
 
   astro@4.15.9(rollup@4.22.5)(typescript@5.6.2):
     dependencies:
