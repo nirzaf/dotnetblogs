@@ -40,7 +40,7 @@
 		"string-width": "^7.2.0"
 	},
 	"devDependencies": {
-		"@astrojs/mdx": "2.0.3",
+		"@astrojs/mdx": "3.1.8",
 		"@astrojs/sitemap": "3.2.0",
 		"@astrojs/tailwind": "5.1.0",
 		"@pagefind/default-ui": "^1.1.1",
