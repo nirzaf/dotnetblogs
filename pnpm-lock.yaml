@@ -82,8 +82,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0(prettier@3.3.3)
       prettier-plugin-astro:
-        specifier: ^0.12.3
-        version: 0.12.3
+        specifier: ^0.14.1
+        version: 0.14.1
       reading-time:
         specifier: ^1.5.0
         version: 1.5.0
@@ -109,9 +109,6 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
-
-  '@astrojs/compiler@1.8.2':
-    resolution: {integrity: sha512-o/ObKgtMzl8SlpIdzaxFnt7SATKPxu4oIP/1NL+HDJRzxfJcAkOTAb/ZKMRyULbz4q+1t2/DAebs2Z1QairkZw==}
 
   '@astrojs/compiler@2.10.3':
     resolution: {integrity: sha512-bL/O7YBxsFt55YHU021oL+xz+B/9HvGNId3F9xURN16aeqDK9juHGktdkCSXz+U4nqFACq6ZFvWomOzhV+zfPw==}
@@ -2598,8 +2595,8 @@ packages:
     peerDependencies:
       prettier: ^2.6.0 || ^3.0.0
 
-  prettier-plugin-astro@0.12.3:
-    resolution: {integrity: sha512-GthUSu3zCvmtVyqlArosez0xE08vSJ0R1sWurxIWpABaCkNGYFANoUdFkqmIo54EV2uPLGcVJzOucWvCjPBWvg==}
+  prettier-plugin-astro@0.14.1:
+    resolution: {integrity: sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==}
     engines: {node: ^14.15.0 || >=16.0.0}
 
   prettier@3.3.3:
@@ -3307,8 +3304,6 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
-
-  '@astrojs/compiler@1.8.2': {}
 
   '@astrojs/compiler@2.10.3': {}
 
@@ -6424,9 +6419,9 @@ snapshots:
     dependencies:
       prettier: 3.3.3
 
-  prettier-plugin-astro@0.12.3:
+  prettier-plugin-astro@0.14.1:
     dependencies:
-      '@astrojs/compiler': 1.8.2
+      '@astrojs/compiler': 2.10.3
       prettier: 3.3.3
       sass-formatter: 0.7.9
 
