@@ -31,8 +31,8 @@ importers:
         specifier: 3.2.0
         version: 3.2.0
       '@astrojs/tailwind':
-        specifier: 5.1.0
-        version: 5.1.0(astro@4.16.1(rollup@4.22.5)(typescript@5.6.2))(tailwindcss@3.4.13)
+        specifier: 5.1.2
+        version: 5.1.2(astro@4.16.1(rollup@4.22.5)(typescript@5.6.2))(tailwindcss@3.4.13)
       '@pagefind/default-ui':
         specifier: ^1.1.1
         version: 1.1.1
@@ -135,10 +135,10 @@ packages:
   '@astrojs/sitemap@3.2.0':
     resolution: {integrity: sha512-SkrOCL3Z6HxdiXreZ1+aPBWgnBMJ31EgPdcscgQeLqI2Gqk/4EKLuw9q0SqKU9MmHpcPXXtcd0odfCk4barPoA==}
 
-  '@astrojs/tailwind@5.1.0':
-    resolution: {integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==}
+  '@astrojs/tailwind@5.1.2':
+    resolution: {integrity: sha512-IvOF0W/dtHElcXvhrPR35nHmhyV3cfz1EzPitMGtU7sYy9Hci3BNK1To6FWmVuuNKPxza1IgCGetSynJZL7fOg==}
     peerDependencies:
-      astro: ^3.0.0 || ^4.0.0
+      astro: ^3.0.0 || ^4.0.0 || ^5.0.0-beta.0
       tailwindcss: ^3.0.24
 
   '@astrojs/telemetry@3.1.0':
@@ -3326,7 +3326,7 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.23.8
 
-  '@astrojs/tailwind@5.1.0(astro@4.16.1(rollup@4.22.5)(typescript@5.6.2))(tailwindcss@3.4.13)':
+  '@astrojs/tailwind@5.1.2(astro@4.16.1(rollup@4.22.5)(typescript@5.6.2))(tailwindcss@3.4.13)':
     dependencies:
       astro: 4.16.1(rollup@4.22.5)(typescript@5.6.2)
       autoprefixer: 10.4.20(postcss@8.4.47)
