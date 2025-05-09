@@ -4,7 +4,7 @@ import { getAllPosts } from '@/lib/mdxUtils';
 import { PostCard } from '@/components/PostCard';
 
 export const metadata: Metadata = {
-  title: 'The .NET Evangelist',
+  title: '.NET Evangelist',
   description: 'Exploring modern software development with .NET, web technologies, and cloud solutions',
 };
 

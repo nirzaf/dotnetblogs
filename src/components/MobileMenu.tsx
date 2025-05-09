@@ -55,8 +55,8 @@ export function MobileMenu() {
             href="/"
             className={`block px-4 py-2 text-sm ${
               pathname === '/'
-                ? 'text-blue-600 dark:text-blue-400 bg-gray-50 dark:bg-gray-700'
-                : 'text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700'
+                ? 'text-blue-600 dark:text-blue-400 bg-gray-50 dark:bg-gray-700 font-medium'
+                : 'text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
             }`}
           >
             Home
@@ -65,8 +65,8 @@ export function MobileMenu() {
             href="/blog"
             className={`block px-4 py-2 text-sm ${
               pathname === '/blog'
-                ? 'text-blue-600 dark:text-blue-400 bg-gray-50 dark:bg-gray-700'
-                : 'text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700'
+                ? 'text-blue-600 dark:text-blue-400 bg-gray-50 dark:bg-gray-700 font-medium'
+                : 'text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
             }`}
           >
             Blog
@@ -76,8 +76,8 @@ export function MobileMenu() {
             href="/about"
             className={`block px-4 py-2 text-sm ${
               pathname === '/about'
-                ? 'text-blue-600 dark:text-blue-400 bg-gray-50 dark:bg-gray-700'
-                : 'text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700'
+                ? 'text-blue-600 dark:text-blue-400 bg-gray-50 dark:bg-gray-700 font-medium'
+                : 'text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
             }`}
           >
             About
@@ -89,7 +89,7 @@ export function MobileMenu() {
                 type="text"
                 name="q"
                 placeholder="Search..."
-                className="w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none"
+                className="w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
               />
               <button
                 type="submit"
