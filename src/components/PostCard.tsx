@@ -12,12 +12,13 @@ export function PostCard({ post, highlightTag }: PostCardProps) {
     <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {post.image && (
         <div className="aspect-video relative overflow-hidden">
-          {/* Use Next.js Image component instead of raw img tag */}
-          <img
+          <Image
             src={post.image}
             alt={post.title}
-            className="object-cover w-full h-full"
-            // Remove any inline styles that could cause hydration issues
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover"
+            priority={false}
           />
         </div>
       )}
@@ -40,11 +41,10 @@ export function PostCard({ post, highlightTag }: PostCardProps) {
             <Link
               key={tag}
               href={`/tags/${tag}`}
-              className={`text-xs px-2 py-1 rounded-full ${
-                tag === highlightTag
+              className={`text-xs px-2 py-1 rounded-full ${tag === highlightTag
                   ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
                   : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-              }`}
+                }`}
             >
               #{tag}
             </Link>

@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,22 +35,25 @@ export default function RootLayout({
           <header className="bg-white dark:bg-gray-900 shadow-sm">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
               <Link href="/" className="text-2xl font-bold">My Blog</Link>
-              <nav>
-                <ul className="flex space-x-6">
-                  <li>
-                    <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400">Home</Link>
-                  </li>
-                  <li>
-                    <Link href="/blog" className="hover:text-blue-600 dark:hover:text-blue-400">Blog</Link>
-                  </li>
-                  <li>
-                    <Link href="/tags" className="hover:text-blue-600 dark:hover:text-blue-400">Tags</Link>
-                  </li>
-                  <li>
-                    <Link href="/about" className="hover:text-blue-600 dark:hover:text-blue-400">About</Link>
-                  </li>
-                </ul>
-              </nav>
+              <div className="flex items-center space-x-6">
+                <nav>
+                  <ul className="flex space-x-6">
+                    <li>
+                      <Link href="/" className="hover:text-blue-600 dark:hover:text-blue-400">Home</Link>
+                    </li>
+                    <li>
+                      <Link href="/blog" className="hover:text-blue-600 dark:hover:text-blue-400">Blog</Link>
+                    </li>
+                    <li>
+                      <Link href="/tags" className="hover:text-blue-600 dark:hover:text-blue-400">Tags</Link>
+                    </li>
+                    <li>
+                      <Link href="/about" className="hover:text-blue-600 dark:hover:text-blue-400">About</Link>
+                    </li>
+                  </ul>
+                </nav>
+                <ThemeToggle />
+              </div>
             </div>
           </header>
 

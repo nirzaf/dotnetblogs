@@ -2,7 +2,7 @@
 title: 'Modern Web UIs with Blazor in 2025: State Management & Component Libraries'
 description: 'Explore the latest advancements in Blazor development for 2025, focusing on state management, popular component libraries like MudBlazor and Radzen, and key performance optimization techniques.'
 pubDate: '2025-04-06'
-heroImage: '../../assets/images/blazor-modern-ui-2025.png'
+heroImage: 'https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/blazor-modern-ui-2025.png?updatedAt=1746813295064'
 category: '.NET'
 tags: ['Blazor', '.NET', 'Web Development', 'UI', 'State Management', 'MudBlazor', 'Radzen', 'Performance', 'ASP.NET Core']
 ---
@@ -205,8 +205,8 @@ public record CounterState
 public class CounterFeature : Feature<CounterState>
 {
     public override string GetName() => "Counter";
-    
-    protected override CounterState GetInitialState() => 
+
+    protected override CounterState GetInitialState() =>
         new CounterState { CurrentCount = 0 };
 }
 
@@ -220,7 +220,7 @@ public static class CounterReducers
     [ReducerMethod]
     public static CounterState ReduceIncrementCounterAction(CounterState state, IncrementCounterAction action) =>
         state with { CurrentCount = state.CurrentCount + 1 };
-        
+
     [ReducerMethod]
     public static CounterState ReduceDecrementCounterAction(CounterState state, DecrementCounterAction action) =>
         state with { CurrentCount = state.CurrentCount - 1 };
@@ -322,7 +322,7 @@ In `App.razor`:
         <MudText Typo="Typo.h5">Employees</MudText>
     </MudCardHeader>
     <MudCardContent>
-        <MudDataGrid T="Employee" Items="@employees" Filterable="true" SortMode="SortMode.Multiple" 
+        <MudDataGrid T="Employee" Items="@employees" Filterable="true" SortMode="SortMode.Multiple"
                      Hideable="true" Hover="true" Striped="true" Virtualize="true">
             <Columns>
                 <PropertyColumn Property="e => e.Id" Title="ID" Sortable="true" />
@@ -332,11 +332,11 @@ In `App.razor`:
                 <PropertyColumn Property="e => e.Salary" Title="Salary" Sortable="true" Format="C" />
                 <TemplateColumn Title="Actions">
                     <CellTemplate>
-                        <MudButton Variant="Variant.Filled" Color="Color.Primary" 
+                        <MudButton Variant="Variant.Filled" Color="Color.Primary"
                                   @onclick="() => ViewDetails(context.Item)">
                             View
                         </MudButton>
-                        <MudButton Variant="Variant.Filled" Color="Color.Error" 
+                        <MudButton Variant="Variant.Filled" Color="Color.Error"
                                   @onclick="() => DeleteEmployee(context.Item)">
                             Delete
                         </MudButton>
@@ -349,30 +349,30 @@ In `App.razor`:
 
 @code {
     private List<Employee> employees = new();
-    
+
     protected override void OnInitialized()
     {
         // Populate employees list
         employees = GetEmployees();
     }
-    
+
     private List<Employee> GetEmployees() => new()
     {
         new Employee { Id = 1, FirstName = "John", LastName = "Doe", Department = "Engineering", Salary = 90000 },
         new Employee { Id = 2, FirstName = "Jane", LastName = "Smith", Department = "Marketing", Salary = 85000 },
         // More employees...
     };
-    
+
     private void ViewDetails(Employee employee)
     {
         // Handle view details
     }
-    
+
     private void DeleteEmployee(Employee employee)
     {
         // Handle delete
     }
-    
+
     public class Employee
     {
         public int Id { get; set; }
@@ -418,18 +418,18 @@ In `App.razor`:
     private bool success;
     private string[] errors = { };
     private Employee employee = new();
-    
+
     private void SubmitForm()
     {
         // Handle form submission
     }
-    
+
     private void ResetForm()
     {
         employee = new();
         form.Reset();
     }
-    
+
     public class Employee
     {
         public string FirstName { get; set; }
@@ -479,13 +479,13 @@ In `_Layout.cshtml` or `App.razor`:
 
 <h1>Employees</h1>
 
-<RadzenButton Icon="add_circle_outline" Text="Add New Employee" Click="@AddNewEmployee" 
+<RadzenButton Icon="add_circle_outline" Text="Add New Employee" Click="@AddNewEmployee"
              ButtonStyle="ButtonStyle.Success" class="mb-3" />
 
-<RadzenDataGrid @ref="grid" AllowFiltering="true" AllowColumnResize="true" 
-                AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true" 
-                PageSize="10" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" 
-                ShowPagingSummary="true" Data="@employees" TItem="Employee" 
+<RadzenDataGrid @ref="grid" AllowFiltering="true" AllowColumnResize="true"
+                AllowAlternatingRows="true" FilterMode="FilterMode.Advanced" AllowSorting="true"
+                PageSize="10" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left"
+                ShowPagingSummary="true" Data="@employees" TItem="Employee"
                 ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or">
     <Columns>
         <RadzenDataGridColumn TItem="Employee" Property="Id" Title="ID" Width="80px" TextAlign="TextAlign.Center" />
@@ -495,9 +495,9 @@ In `_Layout.cshtml` or `App.razor`:
         <RadzenDataGridColumn TItem="Employee" Property="Salary" Title="Salary" Width="150px" FormatString="{0:C}" />
         <RadzenDataGridColumn TItem="Employee" Title="Actions" Width="120px" TextAlign="TextAlign.Center">
             <Template Context="employee">
-                <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Light" 
+                <RadzenButton Icon="edit" ButtonStyle="ButtonStyle.Light"
                              Click="@(args => EditEmployee(employee))" />
-                <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger" 
+                <RadzenButton Icon="delete" ButtonStyle="ButtonStyle.Danger"
                              Click="@(args => DeleteEmployee(employee))" />
             </Template>
         </RadzenDataGridColumn>
@@ -507,88 +507,88 @@ In `_Layout.cshtml` or `App.razor`:
 @code {
     RadzenDataGrid<Employee> grid;
     IEnumerable<Employee> employees;
-    
+
     protected override void OnInitialized()
     {
         employees = GetEmployees();
     }
-    
+
     private List<Employee> GetEmployees() => new()
     {
         new Employee { Id = 1, FirstName = "John", LastName = "Doe", Department = "Engineering", Salary = 90000 },
         new Employee { Id = 2, FirstName = "Jane", LastName = "Smith", Department = "Marketing", Salary = 85000 },
         // More employees...
     };
-    
+
     async Task AddNewEmployee()
     {
-        var result = await DialogService.OpenAsync<EmployeeEditor>("Add Employee", 
+        var result = await DialogService.OpenAsync<EmployeeEditor>("Add Employee",
             new Dictionary<string, object>() { { "Employee", new Employee() } });
-        
+
         if (result != null)
         {
             var newEmployee = (Employee)result;
             var employeeList = employees.ToList();
-            
+
             newEmployee.Id = employeeList.Count > 0 ? employeeList.Max(e => e.Id) + 1 : 1;
             employeeList.Add(newEmployee);
             employees = employeeList;
-            
+
             NotificationService.Notify(NotificationSeverity.Success, "Success", "Employee added successfully");
             await grid.Reload();
         }
     }
-    
+
     async Task EditEmployee(Employee employee)
     {
-        var result = await DialogService.OpenAsync<EmployeeEditor>("Edit Employee", 
-            new Dictionary<string, object>() { { "Employee", new Employee 
-            { 
-                Id = employee.Id, 
-                FirstName = employee.FirstName, 
-                LastName = employee.LastName, 
-                Department = employee.Department, 
-                Salary = employee.Salary 
+        var result = await DialogService.OpenAsync<EmployeeEditor>("Edit Employee",
+            new Dictionary<string, object>() { { "Employee", new Employee
+            {
+                Id = employee.Id,
+                FirstName = employee.FirstName,
+                LastName = employee.LastName,
+                Department = employee.Department,
+                Salary = employee.Salary
             } } });
-        
+
         if (result != null)
         {
             var updatedEmployee = (Employee)result;
             var employeeList = employees.ToList();
             var index = employeeList.FindIndex(e => e.Id == employee.Id);
-            
+
             if (index != -1)
             {
                 employeeList[index] = updatedEmployee;
                 employees = employeeList;
-                
+
                 NotificationService.Notify(NotificationSeverity.Success, "Success", "Employee updated successfully");
                 await grid.Reload();
             }
         }
     }
-    
+
     async Task DeleteEmployee(Employee employee)
     {
-        var confirm = await DialogService.Confirm("Are you sure you want to delete this employee?", 
+        var confirm = await DialogService.Confirm("Are you sure you want to delete this employee?",
             "Delete Employee", new ConfirmOptions() { OkButtonText = "Yes", CancelButtonText = "No" });
-        
+
         if (confirm.HasValue && confirm.Value)
         {
             var employeeList = employees.ToList();
             var index = employeeList.FindIndex(e => e.Id == employee.Id);
-            
+
             if (index != -1)
             {
                 employeeList.RemoveAt(index);
                 employees = employeeList;
-                
+
                 NotificationService.Notify(NotificationSeverity.Success, "Success", "Employee deleted successfully");
                 await grid.Reload();
             }
         }
     }
-    
+
     public class Employee
     {
         public int Id { get; set; }
@@ -623,7 +623,7 @@ In `_Layout.cshtml` or `App.razor`:
     <div class="row">
         <div class="col-md-6 mb-3">
             <RadzenFormField Text="Department" Variant="Variant.Outlined">
-                <RadzenDropDown @bind-Value="@Employee.Department" Data="@departments" 
+                <RadzenDropDown @bind-Value="@Employee.Department" Data="@departments"
                                TextProperty="Name" ValueProperty="Id" Name="Department" />
                 <RadzenRequiredValidator Component="Department" Text="Department is required" />
             </RadzenFormField>
@@ -632,7 +632,7 @@ In `_Layout.cshtml` or `App.razor`:
             <RadzenFormField Text="Salary" Variant="Variant.Outlined">
                 <RadzenNumeric @bind-Value="@Employee.Salary" Name="Salary" />
                 <RadzenRequiredValidator Component="Salary" Text="Salary is required" />
-                <RadzenNumericRangeValidator Component="Salary" Min="30000" Max="200000" 
+                <RadzenNumericRangeValidator Component="Salary" Min="30000" Max="200000"
                                           Text="Salary must be between $30,000 and $200,000" />
             </RadzenFormField>
         </div>
@@ -648,7 +648,7 @@ In `_Layout.cshtml` or `App.razor`:
 @code {
     [Parameter]
     public Employee Employee { get; set; }
-    
+
     private List<Department> departments = new()
     {
         new Department { Id = "Engineering", Name = "Engineering" },
@@ -656,17 +656,17 @@ In `_Layout.cshtml` or `App.razor`:
         new Department { Id = "Sales", Name = "Sales" },
         new Department { Id = "HR", Name = "HR" }
     };
-    
+
     private void OnSubmit()
     {
         DialogService.Close(Employee);
     }
-    
+
     private void Cancel()
     {
         DialogService.Close();
     }
-    
+
     public class Department
     {
         public string Id { get; set; }
@@ -754,12 +754,12 @@ else
     private bool chartsLoaded;
     private Type chartComponentType;
     private Dictionary<string, object> parameters = new();
-    
+
     protected override async Task OnInitializedAsync()
     {
         var assemblies = await LazyLoader.LoadAssembliesAsync(new[] { "ChartComponents.dll" });
         var assembly = assemblies.FirstOrDefault();
-        
+
         if (assembly != null)
         {
             chartComponentType = assembly.GetType("ChartComponents.BarChart");
@@ -767,14 +767,14 @@ else
             chartsLoaded = true;
         }
     }
-    
+
     private List<DataPoint> GetChartData() => new()
     {
         new DataPoint { Label = "Jan", Value = 42 },
         new DataPoint { Label = "Feb", Value = 57 },
         // More data...
     };
-    
+
     public class DataPoint
     {
         public string Label { get; set; }
@@ -799,14 +799,14 @@ Use Blazor's built-in virtualization to efficiently render long lists by only re
 
 @code {
     private List<DataItem> largeDataSet = Enumerable.Range(1, 10000)
-        .Select(i => new DataItem 
-        { 
-            Id = i, 
-            Title = $"Item {i}", 
-            Description = $"Description for item {i}" 
+        .Select(i => new DataItem
+        {
+            Id = i,
+            Title = $"Item {i}",
+            Description = $"Description for item {i}"
         })
         .ToList();
-    
+
     public class DataItem
     {
         public int Id { get; set; }
@@ -833,10 +833,10 @@ Implement `ShouldRender()` to avoid unnecessary renders:
 
 @code {
     private string previousValue;
-    
+
     [Parameter]
     public string Value { get; set; }
-    
+
     protected override bool ShouldRender()
     {
         if (Value != previousValue)
@@ -844,7 +844,7 @@ Implement `ShouldRender()` to avoid unnecessary renders:
             previousValue = Value;
             return true;
         }
-        
+
         return false;
     }
 }
@@ -859,7 +859,7 @@ Proper memory management is crucial, especially in Blazor Server apps:
 
 @code {
     private System.Threading.Timer timer;
-    
+
     protected override void OnInitialized()
     {
         timer = new System.Threading.Timer(
@@ -872,7 +872,7 @@ Proper memory management is crucial, especially in Blazor Server apps:
             TimeSpan.FromSeconds(1)
         );
     }
-    
+
     public void Dispose()
     {
         timer?.Dispose();
@@ -946,7 +946,7 @@ Blazor's CSS isolation helps keep styles scoped to specific components, improvin
 
 @code {
     private int currentCount = 0;
-    
+
     private void IncrementCount()
     {
         currentCount++;
@@ -1018,15 +1018,15 @@ public static class TasksReducers
     [ReducerMethod]
     public static TasksState ReduceFetchTasksAction(TasksState state, FetchTasksAction action) =>
         state with { IsLoading = true, ErrorMessage = null };
-        
+
     [ReducerMethod]
     public static TasksState ReduceFetchTasksSuccessAction(TasksState state, FetchTasksSuccessAction action) =>
         state with { IsLoading = false, Tasks = action.Tasks.ToList(), ErrorMessage = null };
-        
+
     [ReducerMethod]
     public static TasksState ReduceFetchTasksFailureAction(TasksState state, FetchTasksFailureAction action) =>
         state with { IsLoading = false, ErrorMessage = action.ErrorMessage };
-        
+
     [ReducerMethod]
     public static TasksState ReduceAddTaskAction(TasksState state, AddTaskAction action)
     {
@@ -1034,21 +1034,21 @@ public static class TasksReducers
         tasks.Add(action.Task);
         return state with { Tasks = tasks };
     }
-    
+
     [ReducerMethod]
     public static TasksState ReduceUpdateTaskAction(TasksState state, UpdateTaskAction action)
     {
         var tasks = state.Tasks.ToList();
         var index = tasks.FindIndex(t => t.Id == action.Task.Id);
-        
+
         if (index >= 0)
         {
             tasks[index] = action.Task;
         }
-        
+
         return state with { Tasks = tasks };
     }
-    
+
     [ReducerMethod]
     public static TasksState ReduceDeleteTaskAction(TasksState state, DeleteTaskAction action)
     {
@@ -1068,11 +1068,11 @@ public static class TasksReducers
 
 <MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
     <MudText Typo="Typo.h3" Class="mb-4">Tasks</MudText>
-    
+
     <MudPaper Class="pa-4 mb-4">
         <TaskForm OnSubmit="AddTask" />
     </MudPaper>
-    
+
     @if (TasksState.Value.IsLoading)
     {
         <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-4" />
@@ -1085,7 +1085,7 @@ public static class TasksReducers
     {
         <MudPaper Class="pa-0" Style="height: 500px; overflow-y: auto;">
             <Virtualize Items="@TasksState.Value.Tasks" Context="task" OverscanCount="5">
-                <TaskItem Task="@task" 
+                <TaskItem Task="@task"
                          OnStatusChanged="UpdateTaskStatus"
                          OnDelete="DeleteTask" />
             </Virtualize>
@@ -1102,17 +1102,17 @@ public static class TasksReducers
         Dispatcher.Dispatch(new FetchTasksAction()); // Assuming effects handle the API call
         base.OnInitialized();
     }
-    
+
     private void AddTask(TaskItem task)
     {
         Dispatcher.Dispatch(new AddTaskAction(task)); // Assuming effects handle the API call
     }
-    
+
     private void UpdateTaskStatus(TaskItem task)
     {
         Dispatcher.Dispatch(new UpdateTaskAction(task)); // Assuming effects handle the API call
     }
-    
+
     private void DeleteTask(int taskId)
     {
         Dispatcher.Dispatch(new DeleteTaskAction(taskId)); // Assuming effects handle the API call
@@ -1127,7 +1127,7 @@ public static class TasksReducers
 <MudPaper Elevation="2" Class="pa-4 ma-2 task-item @GetStatusClass()">
     <MudGrid>
         <MudItem xs="1">
-            <MudCheckBox Checked="@Task.IsCompleted" 
+            <MudCheckBox Checked="@Task.IsCompleted"
                          CheckedChanged="@(value => OnStatusChange(value))" />
         </MudItem>
         <MudItem xs="8">
@@ -1150,7 +1150,7 @@ public static class TasksReducers
             </MudText>
         </MudItem>
         <MudItem xs="1">
-            <MudIconButton Icon="@Icons.Material.Filled.Delete" 
+            <MudIconButton Icon="@Icons.Material.Filled.Delete"
                           Color="Color.Error"
                           OnClick="@(() => OnDeleteClicked())" />
         </MudItem>
@@ -1160,26 +1160,26 @@ public static class TasksReducers
 @code {
     [Parameter]
     public TaskItem Task { get; set; } // Assume TaskItem model exists
-    
+
     [Parameter]
     public EventCallback<TaskItem> OnStatusChanged { get; set; }
-    
+
     [Parameter]
     public EventCallback<int> OnDelete { get; set; }
-    
+
     private async Task OnStatusChange(bool value)
     {
         Task.IsCompleted = value;
         await OnStatusChanged.InvokeAsync(Task);
     }
-    
+
     private async Task OnDeleteClicked()
     {
         await OnDelete.InvokeAsync(Task.Id);
     }
-    
+
     private string GetStatusClass() => Task.IsCompleted ? "completed" : "";
-    
+
     private Color GetPriorityColor() => Task.Priority switch
     {
         "High" => Color.Error,
@@ -1216,12 +1216,12 @@ public static class TasksReducers
 public class TasksEffects
 {
     private readonly ITaskService _taskService; // Assume ITaskService exists
-    
+
     public TasksEffects(ITaskService taskService)
     {
         _taskService = taskService;
     }
-    
+
     [EffectMethod]
     public async Task HandleFetchTasksAction(FetchTasksAction action, IDispatcher dispatcher)
     {
@@ -1235,7 +1235,7 @@ public class TasksEffects
             dispatcher.Dispatch(new FetchTasksFailureAction(ex.Message));
         }
     }
-    
+
     [EffectMethod]
     public async Task HandleAddTaskAction(AddTaskAction action, IDispatcher dispatcher)
     {
@@ -1250,7 +1250,7 @@ public class TasksEffects
             Console.WriteLine($"Error adding task: {ex.Message}");
         }
     }
-    
+
     // Similar effect methods for UpdateTaskAction and DeleteTaskAction
 }
 ```
@@ -1286,12 +1286,12 @@ else
 @code {
     private bool reportsComponentLoaded;
     private Type reportsComponentType;
-    
+
     protected override async Task OnInitializedAsync()
     {
         var assemblies = await LazyLoader.LoadAssembliesAsync(new[] { "TaskReporting.dll" });
         var assembly = assemblies.FirstOrDefault();
-        
+
         if (assembly != null)
         {
             reportsComponentType = assembly.GetType("TaskManager.Reporting.ReportsDashboard"); // Adjust namespace/type

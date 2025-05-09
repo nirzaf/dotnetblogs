@@ -2,7 +2,7 @@
 title: 'Mastering SQL: The Power of SUM() with CASE WHEN'
 description: 'Unlock the potential of conditional aggregation in SQL using SUM() with CASE WHEN. Learn how to extract meaningful insights from your data with ease.'
 pubDate: 'Oct 11 2024'
-heroImage: '../../assets/images/mastering-sql-the-power-of-sum-with-case-when.jpg'
+heroImage: 'https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/mastering-sql-the-power-of-sum-with-case-when.jpg?updatedAt=1746813301052'
 category: 'Database'
 tags: ['SQL' ,'Data Analysis','Programming']
 authors: ['author']
@@ -47,7 +47,7 @@ CREATE TABLE product_inventory (
 );
 
 INSERT INTO product_inventory (id, product_name, color, date_added)
-VALUES 
+VALUES
     (1, 'T-shirt', 'red', '2023-01-01'),
     (2, 'Jeans', 'blue', '2023-01-02'),
     (3, 'Sweater', 'red', '2023-01-03'),
@@ -58,9 +58,9 @@ VALUES
 Now, let's say we want to calculate the percentage of items in our inventory that are red. Here's how we can do that using `SUM()` with `CASE WHEN`:
 
 ```sql
-SELECT 
+SELECT
     SUM(CASE WHEN color = 'red' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS percentage_red
-FROM 
+FROM
     product_inventory;
 ```
 
@@ -79,14 +79,14 @@ This result tells us that 60% of the items in our inventory are red. Pretty cool
 What if we want to see how the color distribution of our inventory changes over time? No problem! We can modify our query to group the results by year:
 
 ```sql
-SELECT 
+SELECT
     EXTRACT(YEAR FROM date_added) AS year,
     SUM(CASE WHEN color = 'red' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS percentage_red
-FROM 
+FROM
     product_inventory
-GROUP BY 
+GROUP BY
     EXTRACT(YEAR FROM date_added)
-ORDER BY 
+ORDER BY
     year;
 ```
 
@@ -128,12 +128,12 @@ You can nest multiple conditions within your `CASE WHEN` statement to create mor
 
 ```sql
 SELECT
-    SUM(CASE 
-        WHEN color = 'red' AND price > 50 THEN 1 
+    SUM(CASE
+        WHEN color = 'red' AND price > 50 THEN 1
         WHEN color = 'blue' AND price <= 50 THEN 1
-        ELSE 0 
+        ELSE 0
     END) * 100.0 / COUNT(*) AS percentage_matching_criteria
-FROM 
+FROM
     product_inventory;
 ```
 
@@ -148,11 +148,11 @@ SELECT
     product_name,
     color,
     price,
-    SUM(CASE WHEN price > 50 THEN 1 ELSE 0 END) OVER (PARTITION BY color) * 100.0 / 
+    SUM(CASE WHEN price > 50 THEN 1 ELSE 0 END) OVER (PARTITION BY color) * 100.0 /
         COUNT(*) OVER (PARTITION BY color) AS percentage_expensive_by_color
-FROM 
+FROM
     product_inventory
-ORDER BY 
+ORDER BY
     color, price DESC;
 ```
 
