@@ -76,22 +76,81 @@ tsconfig.json
 
 ### 7. Testing
 
-* **Cypress** for end-to-end testing of blog functionality.
-* Automated tests for blog index page, individual posts, and image loading.
+* **Cypress** for comprehensive end-to-end testing of blog functionality.
+* Automated tests covering all aspects of the blog:
+  * Navigation and layout
+  * Homepage functionality
+  * Blog index page and post cards
+  * Individual blog post rendering and MDX content
+  * Tags pages and filtering
+  * About page
+  * 404 page handling
+  * SEO and metadata
+  * Accessibility compliance
+  * Responsive design across devices
 * Visual regression testing with screenshots.
 * Custom commands for reusable test patterns.
 
-To run the tests:
+#### Test Categories
+
+1. **Basic Tests**
+   * Server accessibility
+   * Page loading
+   * API endpoint checks
+
+2. **UI and Navigation Tests**
+   * Header and footer
+   * Navigation links
+   * Theme toggle
+   * Responsive layout
+
+3. **Content Tests**
+   * Blog post rendering
+   * MDX components
+   * Code blocks
+   * Images and media
+   * Tags and filtering
+
+4. **User Experience Tests**
+   * Accessibility
+   * SEO and metadata
+   * Performance
+   * Error handling
+
+5. **Responsive Design Tests**
+   * Mobile layout
+   * Tablet layout
+   * Desktop layout
+   * Large desktop layout
+
+#### Running Tests
+
 ```bash
-# Open Cypress Test Runner
+# Open Cypress Test Runner (interactive mode)
 npm run cypress:open
 
-# Run tests headlessly
+# Run all tests headlessly
 npm run cypress:run
 
-# Run tests with npm test
+# Run specific test files
+npx cypress run --spec "cypress/e2e/blog-post-detail.cy.ts"
+
+# Run tests with npm test (alias for cypress:run)
 npm test
 ```
+
+#### Test Files
+
+* `navigation-layout.cy.ts` - Tests for navigation, header, footer, and theme toggle
+* `homepage.cy.ts` - Tests for homepage content and functionality
+* `blog-index-detailed.cy.ts` - Tests for blog index page and post cards
+* `blog-post-detail.cy.ts` - Tests for individual blog posts and MDX rendering
+* `tags.cy.ts` - Tests for tags index and individual tag pages
+* `about.cy.ts` - Tests for about page content
+* `not-found.cy.ts` - Tests for 404 page handling
+* `seo-metadata.cy.ts` - Tests for SEO and metadata across all pages
+* `accessibility.cy.ts` - Tests for accessibility compliance
+* `responsive-design.cy.ts` - Tests for responsive design across devices
 
 ### 8. Deployment
 
