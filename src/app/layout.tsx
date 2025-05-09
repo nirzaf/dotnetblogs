@@ -18,10 +18,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | My Blog',
-    default: 'My Blog',
+    template: '%s | The .NET Evangelist',
+    default: 'The .NET Evangelist',
   },
-  description: "A modern blog built with Next.js and MDX",
+  description: "Exploring modern software development with .NET, web technologies, and cloud solutions",
 };
 
 export default function RootLayout({
@@ -35,7 +35,7 @@ export default function RootLayout({
         <ThemeProvider>
           <header className="bg-white dark:bg-gray-900 shadow-sm">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-              <Link href="/" className="text-2xl font-bold">My Blog</Link>
+              <Link href="/" className="text-2xl font-bold">The .NET Evangelist</Link>
               <div className="flex-1 mx-4 max-w-md hidden md:block">
                 <HeaderSearch />
               </div>
@@ -70,7 +70,7 @@ export default function RootLayout({
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-4 md:mb-0">
                   <p className="text-gray-600 dark:text-gray-300">
-                    © 2025 My Blog. All rights reserved.
+                    © 2025 The .NET Evangelist. All rights reserved.
                   </p>
                 </div>
                 <div className="flex space-x-4">

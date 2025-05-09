@@ -5,8 +5,8 @@ import { PostCard } from '@/components/PostCard';
 import { SearchBar } from '@/components/SearchBar';
 
 export const metadata: Metadata = {
-  title: 'My Blog',
-  description: 'A modern blog built with Next.js and MDX',
+  title: 'The .NET Evangelist',
+  description: 'Exploring modern software development with .NET, web technologies, and cloud solutions',
 };
 
 export default async function Home() {
@@ -17,9 +17,9 @@ export default async function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Welcome to My Blog</h1>
+        <h1 className="text-4xl font-bold mb-4">The .NET Evangelist</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-          A modern blogging platform built with Next.js and MDX
+          Exploring modern software development with .NET, web technologies, and cloud solutions
         </p>
         <SearchBar />
       </div>
