@@ -37,14 +37,38 @@ const components = {
       {props.alt && <p className="text-center text-sm text-gray-500 mt-2">{props.alt}</p>}
     </div>
   ),
-  Image: (props: React.ComponentProps<typeof Image>) => (
-    <span className="my-6 block">
-      <Image {...props} />
-      {props.alt && (
-        <p className="text-center text-sm text-gray-500 mt-2">{props.alt}</p>
-      )}
-    </span>
-  ),
+  iframe: (props: React.IframeHTMLAttributes<HTMLIFrameElement> & { frameborder?: string; allowfullscreen?: boolean }) => {
+    // Convert HTML attributes to React properties (camelCase)
+    const { frameborder, allowfullscreen, ...otherProps } = props;
+
+    const reactProps: React.IframeHTMLAttributes<HTMLIFrameElement> = {
+      ...otherProps,
+      frameBorder: props.frameBorder || frameborder || "0",
+      allowFullScreen: props.allowFullScreen || allowfullscreen || true,
+    };
+
+    return (
+      <div className="my-6 aspect-video">
+        <iframe
+          className="w-full h-full rounded-lg shadow-md"
+          {...reactProps}
+        />
+      </div>
+    );
+  },
+  Image: (props: React.ComponentProps<typeof Image>) => {
+    const { alt, ...otherProps } = props;
+    const imageAlt = alt || 'Blog image';
+
+    return (
+      <span className="my-6 block">
+        <Image alt={imageAlt} {...otherProps} />
+        {alt && (
+          <p className="text-center text-sm text-gray-500 mt-2">{alt}</p>
+        )}
+      </span>
+    );
+  },
   code: (props: React.HTMLAttributes<HTMLElement>) => {
     const { className = '', children, ...rest } = props;
     const isBlock = className.startsWith('language-');
