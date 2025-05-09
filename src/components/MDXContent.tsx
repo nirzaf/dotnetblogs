@@ -53,7 +53,9 @@ const components = {
     const reactProps: React.IframeHTMLAttributes<HTMLIFrameElement> = {
       ...otherProps,
       frameBorder: props.frameBorder || frameborder || "0",
-      allowFullScreen: props.allowFullScreen || allowfullscreen || true,
+      // Use boolean true instead of string "true"
+      allowFullScreen: props.allowFullScreen !== undefined ? props.allowFullScreen :
+                      allowfullscreen !== undefined ? !!allowfullscreen : true,
     };
 
     // Use a div that will be rendered outside of any p tags
@@ -162,7 +164,7 @@ export function MDXContent({ source }: MDXContentProps) {
           <iframe
             className="w-full h-full rounded-lg shadow-md"
             frameBorder={frameborder || "0"}
-            allowFullScreen={allowfullscreen || true}
+            allowFullScreen={allowfullscreen !== undefined ? !!allowfullscreen : true}
             {...otherProps}
           />
         </div>

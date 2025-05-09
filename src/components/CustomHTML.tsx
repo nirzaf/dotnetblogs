@@ -23,8 +23,8 @@ export function CustomHTML({ html }: CustomHTMLProps) {
       .replace(/<\/div>(.*?)<\/p>/g, '</span>$1</p>')
       // Fix frameborder attribute
       .replace(/frameborder=["']([^"']*)["']/g, 'frameBorder="$1"')
-      // Fix allowfullscreen attribute
-      .replace(/allowfullscreen(=["']([^"']*)["'])?/g, 'allowFullScreen="true"')
+      // Fix allowfullscreen attribute - use JSX boolean syntax
+      .replace(/allowfullscreen(=["']([^"']*)["'])?/g, 'allowFullScreen={true}')
       // Fix marginheight and marginwidth attributes
       .replace(/marginheight=["']([^"']*)["']/g, 'marginHeight="$1"')
       .replace(/marginwidth=["']([^"']*)["']/g, 'marginWidth="$1"')

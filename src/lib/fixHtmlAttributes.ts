@@ -7,7 +7,7 @@ export function fixHtmlAttributes(content: string): string {
     // Fix frameborder attribute
     .replace(/frameborder=/g, 'frameBorder=')
     // Fix allowfullscreen attribute (with or without value)
-    .replace(/allowfullscreen(="[^"]*")?/g, 'allowFullScreen="true"')
+    .replace(/allowfullscreen(="[^"]*")?/g, 'allowFullScreen={true}')
     // Fix marginheight and marginwidth attributes
     .replace(/marginheight=/g, 'marginHeight=')
     .replace(/marginwidth=/g, 'marginWidth=')
