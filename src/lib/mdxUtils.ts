@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import readingTime from 'reading-time';
 import { fixHtmlAttributes } from './fixHtmlAttributes';
+import { rehypeFixAttributes } from './rehypeFixAttributes';
 
 const postsDirectory = path.join(process.cwd(), 'data/posts');
 
