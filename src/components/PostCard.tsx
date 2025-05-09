@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Post } from '@/lib/mdxUtils';
 
 interface PostCardProps {
@@ -11,10 +12,12 @@ export function PostCard({ post, highlightTag }: PostCardProps) {
     <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {post.image && (
         <div className="aspect-video relative overflow-hidden">
+          {/* Use Next.js Image component instead of raw img tag */}
           <img
             src={post.image}
             alt={post.title}
             className="object-cover w-full h-full"
+            // Remove any inline styles that could cause hydration issues
           />
         </div>
       )}

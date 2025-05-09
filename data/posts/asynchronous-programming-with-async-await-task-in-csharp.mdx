@@ -2,7 +2,7 @@
 title: "Asynchronous Programming With Async Await Task in C#"
 description: "Learn about asynchronous programming in C# using async, await, and Task."
 pubDate: "May 03 2023"
-heroImage: "../../assets/images/Asynchronous_Programming_With_Async_Await_Task_In_CSharp.jpg"
+heroImage: "https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/Asynchronous_Programming_With_Async_Await_Task_In_CSharp.jpg?updatedAt=1746813313287"
 category: 'Csharp'
 tags: ["csharp", "async", "await", "task"]
 ---
@@ -19,7 +19,7 @@ Before we see what is asynchronous programming, let's understand what is synchro
 static void Main(string[] args)
 {
     LongProcess();
-            
+
     ShortProcess();
 }
 
@@ -27,7 +27,7 @@ static void LongProcess()
 {
     Console.WriteLine("LongProcess Started");
 
-    //some code that takes long execution time 
+    //some code that takes long execution time
     System.Threading.Thread.Sleep(4000); // hold execution for 4 seconds
 
     Console.WriteLine("LongProcess Completed");
@@ -35,10 +35,10 @@ static void LongProcess()
 
 static void ShortProcess() {
     Console.WriteLine("ShortProcess Started");
-            
+
     //do something here
-            
-    Console.WriteLine("ShortProcess Completed");    
+
+    Console.WriteLine("ShortProcess Completed");
 }
 ```
 
@@ -87,10 +87,10 @@ static async void LongProcess()
 
 static void ShortProcess() {
     Console.WriteLine("ShortProcess Started");
-            
+
     //do something here
-            
-    Console.WriteLine("ShortProcess Completed");    
+
+    Console.WriteLine("ShortProcess Completed");
 }
 ```
 
@@ -118,7 +118,7 @@ The await keyword waits for the async method until it returns a value. So the ma
 The Task class represents an asynchronous operation and ```Task<TResult>``` generic class represents an operation that can return a value. In the above example, we used await Task.Delay(4000) that started async operation that sleeps for 4 seconds and await holds a thread until 4 seconds.
 
 The following demonstrates the async method that returns a value.
-    
+
 ```csharp
 static async Task Main(string[] args)
 {
@@ -177,7 +177,7 @@ static async Task Main(string[] args)
 {
     Task<int> result1 = LongProcess1();
     Task<int> result2 = LongProcess2();
-    
+
     //do something here
     Console.WriteLine("After two long processes.");
 
