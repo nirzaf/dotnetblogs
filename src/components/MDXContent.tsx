@@ -140,6 +140,21 @@ export function MDXContent({ source }: MDXContentProps) {
     // Add a component to handle raw HTML content
     html: ({ children }: { children: string }) => {
       return <CustomHTML html={children} />;
+    },
+    // Add custom iframe component to handle iframe attributes
+    iframe: (props: React.IframeHTMLAttributes<HTMLIFrameElement> & { frameborder?: string; allowfullscreen?: boolean }) => {
+      const { frameborder, allowfullscreen, ...otherProps } = props;
+
+      return (
+        <div className="my-6 aspect-video">
+          <iframe
+            className="w-full h-full rounded-lg shadow-md"
+            frameBorder={frameborder || "0"}
+            allowFullScreen={allowfullscreen || true}
+            {...otherProps}
+          />
+        </div>
+      );
     }
   };
 

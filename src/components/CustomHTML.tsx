@@ -12,6 +12,9 @@ export function CustomHTML({ html }: CustomHTMLProps) {
   const sanitizeAndFixHTML = (htmlContent: string): string => {
     // Fix common React attribute issues in iframes
     const fixedHTML = htmlContent
+      // Replace iframe tags with custom components
+      .replace(/<iframe/g, '<custom-iframe')
+      .replace(/<\/iframe>/g, '</custom-iframe>')
       // Fix frameborder attribute
       .replace(/frameborder=["']([^"']*)["']/g, 'frameBorder="$1"')
       // Fix allowfullscreen attribute
@@ -25,6 +28,7 @@ export function CustomHTML({ html }: CustomHTMLProps) {
     // Sanitize the HTML to prevent XSS attacks
     return DOMPurify.sanitize(fixedHTML, {
       ADD_ATTR: ['target', 'frameBorder', 'allowFullScreen', 'marginHeight', 'marginWidth', 'scrolling'],
+      ADD_TAGS: ['custom-iframe'],
     });
   };
 

@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 import readingTime from 'reading-time';
+import { fixHtmlAttributes } from './fixHtmlAttributes';
 
 const postsDirectory = path.join(process.cwd(), 'data/posts');
 
@@ -77,8 +78,11 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     // Calculate reading time
     const readingTimeResult = readingTime(content);
 
+    // Fix HTML attributes in the content
+    const fixedContent = fixHtmlAttributes(content);
+
     // Serialize the MDX content for client-side rendering
-    const mdxSource = await serialize(content, {
+    const mdxSource = await serialize(fixedContent, {
       // Add MDX options for better HTML handling
       parseFrontmatter: true,
       mdxOptions: {
