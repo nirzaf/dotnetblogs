@@ -4,6 +4,8 @@
  */
 export function fixHtmlAttributes(content: string): string {
   return content
+    // Fix class attribute to className
+    .replace(/ class=/g, ' className=')
     // Fix frameborder attribute
     .replace(/frameborder=/g, 'frameBorder=')
     // Fix allowfullscreen attribute (with or without value)

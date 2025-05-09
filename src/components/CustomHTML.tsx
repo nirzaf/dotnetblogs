@@ -21,6 +21,9 @@ export function CustomHTML({ html }: CustomHTMLProps) {
       // Fix div inside p tags - replace with span
       .replace(/<p([^>]*)>(.*?)<div([^>]*)>/g, '<p$1>$2<span$3>')
       .replace(/<\/div>(.*?)<\/p>/g, '</span>$1</p>')
+      // Fix class attribute to className
+      .replace(/ class=/g, ' className=')
+      .replace(/class=/g, 'className=')
       // Fix frameborder attribute
       .replace(/frameborder=["']([^"']*)["']/g, 'frameBorder="$1"')
       // Fix allowfullscreen attribute - use JSX boolean syntax
@@ -33,7 +36,7 @@ export function CustomHTML({ html }: CustomHTMLProps) {
 
     // Sanitize the HTML to prevent XSS attacks
     return DOMPurify.sanitize(fixedHTML, {
-      ADD_ATTR: ['target', 'frameBorder', 'allowFullScreen', 'marginHeight', 'marginWidth', 'scrolling', 'class', 'style'],
+      ADD_ATTR: ['target', 'frameBorder', 'allowFullScreen', 'marginHeight', 'marginWidth', 'scrolling', 'className', 'style'],
       ADD_TAGS: ['custom-iframe', 'span'],
     });
   };
