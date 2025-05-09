@@ -21,6 +21,7 @@ Before diving into the specifics, here’s a high-level overview: we’ll build 
 * **MDX** to write Markdown with embedded JSX components ([Next.js][2]).
 * **Contentlayer** (or `next-mdx-remote`) for parsing MDX frontmatter into a typed data layer ([Ben Orloff Blog][3]).
 * **Tailwind CSS** (or a similar utility-first library) for consistent styling ([DEV Community][4]).
+* **Cypress** for end-to-end testing of blog posts and image loading.
 * **Vercel** for seamless deployment and edge caching.
 
 ### 2. Folder Structure
@@ -73,7 +74,26 @@ tsconfig.json
 * Add JSON-LD structured data for articles.
 * Implement lazy-loading for comments and related posts.
 
-### 7. Deployment
+### 7. Testing
+
+* **Cypress** for end-to-end testing of blog functionality.
+* Automated tests for blog index page, individual posts, and image loading.
+* Visual regression testing with screenshots.
+* Custom commands for reusable test patterns.
+
+To run the tests:
+```bash
+# Open Cypress Test Runner
+npm run cypress:open
+
+# Run tests headlessly
+npm run cypress:run
+
+# Run tests with npm test
+npm test
+```
+
+### 8. Deployment
 
 * Push to GitHub, connect to Vercel for CI/CD.
 * Ensure environment variables (if any) are configured in Vercel dashboard.
