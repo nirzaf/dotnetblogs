@@ -88,7 +88,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       parseFrontmatter: true,
       mdxOptions: {
         development: process.env.NODE_ENV === 'development',
-        rehypePlugins: [],
+        rehypePlugins: [rehypeFixAttributes],
       },
     });
 

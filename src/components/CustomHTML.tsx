@@ -15,6 +15,12 @@ export function CustomHTML({ html }: CustomHTMLProps) {
       // Replace iframe tags with custom components
       .replace(/<iframe/g, '<custom-iframe')
       .replace(/<\/iframe>/g, '</custom-iframe>')
+      // Fix nested p tags - replace any p tags inside p tags with span
+      .replace(/<p([^>]*)>(.*?)<p([^>]*)>/g, '<p$1>$2<span$3>')
+      .replace(/<\/p>(.*?)<\/p>/g, '</span>$1</p>')
+      // Fix div inside p tags - replace with span
+      .replace(/<p([^>]*)>(.*?)<div([^>]*)>/g, '<p$1>$2<span$3>')
+      .replace(/<\/div>(.*?)<\/p>/g, '</span>$1</p>')
       // Fix frameborder attribute
       .replace(/frameborder=["']([^"']*)["']/g, 'frameBorder="$1"')
       // Fix allowfullscreen attribute
@@ -27,8 +33,8 @@ export function CustomHTML({ html }: CustomHTMLProps) {
 
     // Sanitize the HTML to prevent XSS attacks
     return DOMPurify.sanitize(fixedHTML, {
-      ADD_ATTR: ['target', 'frameBorder', 'allowFullScreen', 'marginHeight', 'marginWidth', 'scrolling'],
-      ADD_TAGS: ['custom-iframe'],
+      ADD_ATTR: ['target', 'frameBorder', 'allowFullScreen', 'marginHeight', 'marginWidth', 'scrolling', 'class', 'style'],
+      ADD_TAGS: ['custom-iframe', 'span'],
     });
   };
 

@@ -28,16 +28,24 @@ const components = {
     <blockquote className="border-l-4 border-gray-300 dark:border-gray-700 pl-4 italic my-4" {...props} />
   ),
   hr: () => <hr className="my-8 border-gray-300 dark:border-gray-700" />,
-  img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    <div className="my-6">
-      <img
-        alt={props.alt || 'Blog image'}
-        className="rounded-lg shadow-md mx-auto"
-        {...props}
-      />
-      {props.alt && <p className="text-center text-sm text-gray-500 mt-2">{props.alt}</p>}
-    </div>
-  ),
+  // Replace the img component with a fragment to avoid nesting issues
+  img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    // Extract alt and other props
+    const { alt, ...otherProps } = props;
+    const imageAlt = alt || 'Blog image';
+
+    // Return a fragment instead of a div to avoid nesting issues
+    return (
+      <>
+        <img
+          alt={imageAlt}
+          className="rounded-lg shadow-md mx-auto my-6"
+          {...otherProps}
+        />
+        {alt && <span className="block text-center text-sm text-gray-500 mt-2 mb-6">{alt}</span>}
+      </>
+    );
+  },
   iframe: (props: React.IframeHTMLAttributes<HTMLIFrameElement> & { frameborder?: string; allowfullscreen?: boolean }) => {
     // Convert HTML attributes to React properties (camelCase)
     const { frameborder, allowfullscreen, ...otherProps } = props;
@@ -48,6 +56,7 @@ const components = {
       allowFullScreen: props.allowFullScreen || allowfullscreen || true,
     };
 
+    // Use a div that will be rendered outside of any p tags
     return (
       <div className="my-6 aspect-video">
         <iframe
@@ -62,12 +71,14 @@ const components = {
     const imageAlt = alt || 'Blog image';
 
     return (
-      <span className="my-6 block">
-        <Image alt={imageAlt} {...otherProps} />
+      <>
+        <div className="my-6">
+          <Image alt={imageAlt} {...otherProps} />
+        </div>
         {alt && (
-          <p className="text-center text-sm text-gray-500 mt-2">{alt}</p>
+          <span className="block text-center text-sm text-gray-500 mt-2 mb-6">{alt}</span>
         )}
-      </span>
+      </>
     );
   },
   code: (props: React.HTMLAttributes<HTMLElement>) => {
@@ -145,6 +156,7 @@ export function MDXContent({ source }: MDXContentProps) {
     iframe: (props: React.IframeHTMLAttributes<HTMLIFrameElement> & { frameborder?: string; allowfullscreen?: boolean }) => {
       const { frameborder, allowfullscreen, ...otherProps } = props;
 
+      // Create a div outside of any potential p tags
       return (
         <div className="my-6 aspect-video">
           <iframe
