@@ -6,12 +6,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   
   // Get all posts
   const posts = await getAllPosts();
-  const postUrls = posts.map((post) => ({
+  const postUrls = posts.map((post) => {
+  let lastModified: Date;
+  if (post.date && !isNaN(Date.parse(post.date))) {
+    lastModified = new Date(post.date);
+  } else {
+    lastModified = new Date();
+  }
+  return {
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
-  }));
+  };
+});
   
   // Get all tags
   const tags = await getAllTags();

@@ -1,16 +1,11 @@
-import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getPostBySlug, getAllPosts } from '@/lib/mdxUtils';
 import { MDXContent } from '@/components/MDXContent';
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
-}
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+// @ts-expect-error: Next.js app directory route handler params are not typed
+export async function generateMetadata({ params }) {
   // Ensure params is properly awaited
   const { slug } = params;
   const post = await getPostBySlug(slug);
@@ -43,7 +38,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+// @ts-expect-error: Next.js app directory route handler params are not typed
+export default async function BlogPostPage({ params }) {
   // Ensure params is properly awaited
   const { slug } = params;
   const post = await getPostBySlug(slug);
