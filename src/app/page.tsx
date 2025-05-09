@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const allPosts = await getAllPosts();
-  const recentPosts = allPosts.slice(0, 9); // Get the 9 most recent posts
+  const recentPosts = allPosts.slice(0, 7); // Get the 7 most recent posts
   const featuredPost = recentPosts[0]; // The most recent post as featured
 
   return (

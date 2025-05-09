@@ -55,8 +55,8 @@ describe('Homepage', () => {
       if ($links.length > 0) {
         // Check if post titles are visible
         cy.get('.grid a[href*="/blog/"]').first().should('be.visible');
-        // Check if we have multiple posts (up to 8)
-        cy.get('.grid a[href*="/blog/"]').should('have.length.lessThan', 9);
+        // Check if we have multiple posts (up to 6, since the first one is featured)
+        cy.get('.grid a[href*="/blog/"]').should('have.length.lessThan', 7);
       } else {
         // Skip this test if no recent posts
         cy.log('No recent blog posts found on homepage');
