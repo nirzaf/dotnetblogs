@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-
+import { serialize } from 'next-mdx-remote/serialize';
 import readingTime from 'reading-time';
 
 const postsDirectory = path.join(process.cwd(), 'data/posts');
@@ -15,6 +15,7 @@ export interface Post {
   tags?: string[];
   readingTime: string;
   content: string;
+  draft?: boolean;
 }
 
 export async function getAllPosts(): Promise<Post[]> {
@@ -24,25 +25,19 @@ export async function getAllPosts(): Promise<Post[]> {
   }
 
   const fileNames = fs.readdirSync(postsDirectory);
-  
-  const allPostsData = await Promise.all(
+
+  const allPostsRaw = await Promise.all(
     fileNames
       .filter(fileName => fileName.endsWith('.mdx'))
       .map(async fileName => {
-        // Remove ".mdx" from file name to get slug
         const slug = fileName.replace(/\.mdx$/, '');
-        
-        // Read markdown file as string
         const fullPath = path.join(postsDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
-        
-        // Use gray-matter to parse the post metadata section
         const { data, content } = matter(fileContents);
-        
-        // Calculate reading time
         const readingTimeResult = readingTime(content);
-        
-        // Combine the data with the slug
+
+        // For the list view, we don't need to serialize the content
+        // This will be done in getPostBySlug for the full post view
         return {
           slug,
           title: data.title,
@@ -51,13 +46,15 @@ export async function getAllPosts(): Promise<Post[]> {
           image: data.image || '',
           tags: data.tags || [],
           readingTime: Math.ceil(readingTimeResult.minutes).toString(),
-          content,
+          content: '', // We don't need the content for the list view
+          draft: data.draft === true,
         };
       })
   );
-  
+  // Filter out drafts using the raw frontmatter
+  const publishedPosts = allPostsRaw.filter((post) => !post.draft);
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
+  return publishedPosts.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
     } else {
@@ -69,17 +66,20 @@ export async function getAllPosts(): Promise<Post[]> {
 export async function getPostBySlug(slug: string): Promise<Post | null> {
   try {
     const fullPath = path.join(postsDirectory, `${slug}.mdx`);
-    
+
     if (!fs.existsSync(fullPath)) {
       return null;
     }
-    
+
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
-    
+
     // Calculate reading time
     const readingTimeResult = readingTime(content);
-    
+
+    // Serialize the MDX content for client-side rendering
+    const mdxSource = await serialize(content);
+
     return {
       slug,
       title: data.title,
@@ -88,7 +88,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       image: data.image || '',
       tags: data.tags || [],
       readingTime: Math.ceil(readingTimeResult.minutes).toString(),
-      content,
+      content: JSON.stringify(mdxSource),
     };
   } catch (error) {
     console.error(`Error getting post by slug: ${slug}`, error);
@@ -98,9 +98,9 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 
 export async function getAllTags(): Promise<Record<string, number>> {
   const posts = await getAllPosts();
-  
+
   const tags: Record<string, number> = {};
-  
+
   posts.forEach(post => {
     if (post.tags) {
       post.tags.forEach(tag => {
@@ -112,12 +112,12 @@ export async function getAllTags(): Promise<Record<string, number>> {
       });
     }
   });
-  
+
   return tags;
 }
 
 export async function getPostsByTag(tag: string): Promise<Post[]> {
   const posts = await getAllPosts();
-  
+
   return posts.filter(post => post.tags?.includes(tag));
 }

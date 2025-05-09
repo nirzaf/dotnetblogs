@@ -1,13 +1,13 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getPostBySlug, getAllPosts } from '@/lib/mdxUtils';
-import { MDXContent } from '@/components/MDXContent';
+import { BlogContent } from '@/components/BlogContent';
 
 
 // @ts-expect-error: Next.js app directory route handler params are not typed
 export async function generateMetadata({ params }) {
   // Ensure params is properly awaited
-  const { slug } = params;
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
@@ -41,7 +41,7 @@ export async function generateStaticParams() {
 // @ts-expect-error: Next.js app directory route handler params are not typed
 export default async function BlogPostPage({ params }) {
   // Ensure params is properly awaited
-  const { slug } = params;
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
@@ -88,9 +88,7 @@ export default async function BlogPostPage({ params }) {
         </div>
       </div>
 
-      <div className="prose prose-lg dark:prose-invert max-w-none">
-        <MDXContent source={post.content} />
-      </div>
+      <BlogContent content={post.content} />
 
       <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
         <h2 className="text-2xl font-bold mb-4">Share this post</h2>

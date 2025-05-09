@@ -1,9 +1,9 @@
 'use client';
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { MDXRemote } from 'next-mdx-remote';
 import Prism from 'prismjs';
 import Image from 'next/image';
 import '../styles/prism.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 // Define custom components for MDX
 const components = {
@@ -13,11 +13,11 @@ const components = {
   h4: (props: React.HTMLAttributes<HTMLElement>) => <h4 className="text-lg font-bold mt-4 mb-2" {...props} />,
   p: (props: React.HTMLAttributes<HTMLElement>) => <p className="mb-4" {...props} />,
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a 
-      className="text-blue-600 dark:text-blue-400 hover:underline" 
+    <a
+      className="text-blue-600 dark:text-blue-400 hover:underline"
       target={props.href && props.href.startsWith('http') ? '_blank' : undefined}
       rel={props.href && props.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-      {...props} 
+      {...props}
     />
   ),
   ul: (props: React.HTMLAttributes<HTMLElement>) => <ul className="list-disc pl-6 mb-4" {...props} />,
@@ -99,5 +99,18 @@ interface MDXContentProps {
 }
 
 export function MDXContent({ source }: MDXContentProps) {
-  return <MDXRemote source={source} components={components} />;
+  useEffect(() => {
+    // Initialize Prism.js syntax highlighting when component mounts
+    if (typeof window !== 'undefined') {
+      Prism.highlightAll();
+    }
+  }, [source]);
+
+  // Parse the JSON string back to an object
+  const mdxSource = JSON.parse(source);
+
+  return <MDXRemote
+    {...mdxSource}
+    components={components}
+  />;
 }
