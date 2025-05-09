@@ -4,6 +4,7 @@ import Prism from 'prismjs';
 import Image from 'next/image';
 import '../styles/prism.css';
 import React, { useEffect } from 'react';
+import { CustomHTML } from './CustomHTML';
 
 // Define custom components for MDX
 const components = {
@@ -133,8 +134,17 @@ export function MDXContent({ source }: MDXContentProps) {
   // Parse the JSON string back to an object
   const mdxSource = JSON.parse(source);
 
+  // Add CustomHTML component to handle HTML content
+  const enhancedComponents = {
+    ...components,
+    // Add a component to handle raw HTML content
+    html: ({ children }: { children: string }) => {
+      return <CustomHTML html={children} />;
+    }
+  };
+
   return <MDXRemote
     {...mdxSource}
-    components={components}
+    components={enhancedComponents}
   />;
 }

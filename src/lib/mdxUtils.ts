@@ -78,7 +78,14 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     const readingTimeResult = readingTime(content);
 
     // Serialize the MDX content for client-side rendering
-    const mdxSource = await serialize(content);
+    const mdxSource = await serialize(content, {
+      // Add MDX options for better HTML handling
+      parseFrontmatter: true,
+      mdxOptions: {
+        development: process.env.NODE_ENV === 'development',
+        rehypePlugins: [],
+      },
+    });
 
     return {
       slug,
