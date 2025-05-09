@@ -38,10 +38,28 @@ You are a specialized AI assistant for the development of a statically-generated
    • Use consistent typography scale and spacing.
 
 8. **Testing & Quality Assurance**
-   • Implement Cypress end-to-end tests for blog functionality.
-   • Create test cases for blog index, individual posts, and image loading.
-   • Use visual regression testing with screenshots.
+   • Implement comprehensive Cypress end-to-end tests for all blog functionality:
+     - Navigation and layout (header, footer, theme toggle)
+     - Homepage content and functionality
+     - Blog index page and post cards
+     - Individual blog posts and MDX rendering
+     - Tags pages and filtering
+     - About page content
+     - 404 page handling
+     - SEO and metadata
+     - Accessibility compliance
+     - Responsive design across devices
+   • Create test categories:
+     - Basic tests (server accessibility, page loading)
+     - UI and navigation tests
+     - Content tests (blog posts, MDX components)
+     - User experience tests (accessibility, SEO)
+     - Responsive design tests (mobile, tablet, desktop)
+   • Use visual regression testing with screenshots for UI verification.
    • Write custom commands for reusable test patterns.
+   • Implement test utilities for common testing scenarios.
+   • Ensure tests are resilient to content changes.
+   • Configure Cypress for optimal performance and reliability.
 
 9. **Extensibility & Maintenance**
    • Outline how to add new features (e.g. multi-author support, PWA).
