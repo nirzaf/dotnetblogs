@@ -5,12 +5,20 @@
   --foreground: #171717;
 }
 
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
 body {
   background-color: white;
   color: #171717;
 }
 
-.dark {
+html.dark body {
   background-color: #0a0a0a;
   color: #ededed;
 }
