@@ -15,10 +15,10 @@ export default async function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-blue-600 dark:text-blue-400 leading-tight">
+      <div className="text-center mb-10">
+        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 text-blue-600 dark:text-blue-400 leading-relaxed max-w-3xl mx-auto">
           Exploring modern software development with .NET, web technologies, and cloud solutions
-        </h1>
+        </h2>
       </div>
 
       {featuredPost && (
