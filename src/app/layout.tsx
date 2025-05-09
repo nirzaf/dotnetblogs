@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { HeaderSearch } from "@/components/HeaderSearch";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,6 +36,9 @@ export default function RootLayout({
           <header className="bg-white dark:bg-gray-900 shadow-sm">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
               <Link href="/" className="text-2xl font-bold">My Blog</Link>
+              <div className="flex-1 mx-4 max-w-md hidden md:block">
+                <HeaderSearch />
+              </div>
               <div className="flex items-center space-x-6">
                 <nav>
                   <ul className="flex space-x-6">

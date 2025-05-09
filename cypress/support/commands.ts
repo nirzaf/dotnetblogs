@@ -65,6 +65,12 @@ declare global {
        * @example cy.checkA11y()
        */
       checkA11y(): Chainable<Element>;
+
+      /**
+       * Custom command to test search functionality
+       * @example cy.testSearch('nextjs')
+       */
+      testSearch(query: string): Chainable<Element>;
     }
   }
 }
@@ -225,6 +231,51 @@ Cypress.Commands.add('checkA11y', () => {
       const linkText = text.trim().toLowerCase();
       expect(linkText).not.to.be.oneOf(['click here', 'here', 'link']);
     });
+  });
+});
+
+// Custom command to test search functionality
+Cypress.Commands.add('testSearch', (query: string) => {
+  // Test header search
+  cy.get('header input[placeholder*="Search"]').should('be.visible').type(query);
+
+  // Wait for search results dropdown
+  cy.wait(500);
+
+  // Check if dropdown appears
+  cy.get('body').then($body => {
+    const hasDropdown = $body.find('div[class*="absolute"] a[href*="/blog/"]').length > 0;
+
+    if (hasDropdown) {
+      // Check if results are visible
+      cy.get('div[class*="absolute"] a[href*="/blog/"]').first().should('be.visible');
+    } else {
+      // Check for no results message
+      cy.get('div[class*="absolute"]').contains('No results').should('be.visible');
+    }
+  });
+
+  // Clear the search
+  cy.get('header input[placeholder*="Search"]').clear();
+
+  // Test search page
+  cy.visit(`/search?q=${encodeURIComponent(query)}`);
+
+  // Check if search input has the query
+  cy.get('input[placeholder*="Search"]').should('have.value', query);
+
+  // Wait for results to load
+  cy.wait(1000);
+
+  // Check results or no results message
+  cy.get('body').then($body => {
+    if ($body.find('a[href*="/blog/"]').length > 0) {
+      // If results exist, check if they're visible
+      cy.get('a[href*="/blog/"]').should('be.visible');
+    } else {
+      // If no results, check for no results message
+      cy.contains('No results found').should('be.visible');
+    }
   });
 });
 
