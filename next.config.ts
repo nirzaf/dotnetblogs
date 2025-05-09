@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Configure image domains for external images
+  images: {
+    domains: ['images.unsplash.com'],
+  },
+
+  // Add any other configuration options here
+  reactStrictMode: true,
 };
 
 export default nextConfig;
