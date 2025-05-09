@@ -1,6 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+
+// No need to import Metadata anymore
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,21 +16,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s | My Blog',
-    default: 'My Blog',
-  },
-  description: "A modern blog built with Next.js and MDX",
-};
+// Metadata is defined in metadata.ts
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Use state to track if the component has mounted
+  const [mounted, setMounted] = useState(false);
+
+  // After mounting, we can safely use client-side features
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <html lang="en">
+    <html lang="en" className="light">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
@@ -62,7 +67,7 @@ export default function RootLayout({
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0">
                 <p className="text-gray-600 dark:text-gray-300">
-                  © {new Date().getFullYear()} My Blog. All rights reserved.
+                  © 2025 My Blog. All rights reserved.
                 </p>
               </div>
               <div className="flex space-x-4">

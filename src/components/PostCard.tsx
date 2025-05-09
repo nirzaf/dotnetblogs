@@ -11,16 +11,16 @@ export function PostCard({ post, highlightTag }: PostCardProps) {
     <div className="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {post.image && (
         <div className="aspect-video relative overflow-hidden">
-          <img 
-            src={post.image} 
-            alt={post.title} 
+          <img
+            src={post.image}
+            alt={post.title}
             className="object-cover w-full h-full"
           />
         </div>
       )}
       <div className="p-4">
         <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-          <span>{new Date(post.date).toLocaleDateString()}</span>
+          <span>{post.date}</span>
           <span className="mx-2">•</span>
           <span>{post.readingTime} min read</span>
         </div>
@@ -34,12 +34,12 @@ export function PostCard({ post, highlightTag }: PostCardProps) {
         </p>
         <div className="flex flex-wrap gap-2">
           {post.tags?.map((tag) => (
-            <Link 
-              key={tag} 
+            <Link
+              key={tag}
               href={`/tags/${tag}`}
               className={`text-xs px-2 py-1 rounded-full ${
-                tag === highlightTag 
-                  ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200' 
+                tag === highlightTag
+                  ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
                   : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
               }`}
             >
