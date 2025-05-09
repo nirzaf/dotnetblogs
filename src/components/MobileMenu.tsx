@@ -71,16 +71,7 @@ export function MobileMenu() {
           >
             Blog
           </Link>
-          <Link
-            href="/tags"
-            className={`block px-4 py-2 text-sm ${
-              pathname === '/tags'
-                ? 'text-blue-600 dark:text-blue-400 bg-gray-50 dark:bg-gray-700'
-                : 'text-gray-700 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700'
-            }`}
-          >
-            Tags
-          </Link>
+
           <Link
             href="/about"
             className={`block px-4 py-2 text-sm ${

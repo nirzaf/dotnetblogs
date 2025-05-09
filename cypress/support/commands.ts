@@ -116,7 +116,6 @@ Cypress.Commands.add('checkNavigation', () => {
   // Check navigation links
   cy.get('header a[href="/"]').should('be.visible');
   cy.get('header a[href="/blog"]').should('be.visible');
-  cy.get('header a[href="/tags"]').should('be.visible');
   cy.get('header a[href="/about"]').should('be.visible');
 
   // Check logo/site title

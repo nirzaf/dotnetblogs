@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { getAllPosts } from '@/lib/mdxUtils';
 import { PostCard } from '@/components/PostCard';
-import { SearchBar } from '@/components/SearchBar';
 
 export const metadata: Metadata = {
   title: 'The .NET Evangelist',
@@ -16,12 +15,10 @@ export default async function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">The .NET Evangelist</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
+      <div className="text-center mb-12">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-blue-600 dark:text-blue-400 leading-tight">
           Exploring modern software development with .NET, web technologies, and cloud solutions
-        </p>
-        <SearchBar />
+        </h1>
       </div>
 
       {featuredPost && (
