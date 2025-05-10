@@ -58,10 +58,25 @@ jobs:
           git push
 
       - name: TypeScript Check
-        run: npx tsc --noEmit
+        run: |
+          echo "Checking main TypeScript configuration..."
+          npx tsc --noEmit
+
+          echo "Checking Cypress TypeScript configuration..."
+          npx tsc --project cypress/tsconfig.json --noEmit
 
       - name: Build
         run: npm run build
 
       - name: Run tests
-        run: npm test
+        run: |
+          echo "Starting the Next.js server in the background..."
+          npm run build
+          npm run start &
+          sleep 10  # Give the server time to start
+
+          echo "Running Cypress tests..."
+          npm test
+
+          echo "Stopping the Next.js server..."
+          kill $(lsof -t -i:3000) || true

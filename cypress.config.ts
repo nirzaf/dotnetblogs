@@ -1,8 +1,24 @@
 import { defineConfig } from 'cypress';
 
-// Define custom test data in a separate file or as constants
-// to avoid TypeScript compilation errors
-const TEST_DATA = {
+// Define custom test data with proper TypeScript interfaces
+interface ViewportSize {
+  width: number;
+  height: number;
+}
+
+interface TestData {
+  knownBlogSlugs: string[];
+  knownTags: string[];
+  viewportSizes: {
+    mobile: ViewportSize;
+    tablet: ViewportSize;
+    desktop: ViewportSize;
+    largeDesktop: ViewportSize;
+  };
+}
+
+// Define the test data with proper typing
+const TEST_DATA: TestData = {
   knownBlogSlugs: [
     'building-an-angular-project-with-bootstrap-4-and-firebase',
     'advanced-csharp-programming-delegates-events-generics-async-await-and-linq',
@@ -36,10 +52,8 @@ export default defineConfig({
     },
     setupNodeEvents(on, config) {
       // Add test data to config object so it's available in tests
-      config.env = {
-        ...config.env,
-        TEST_DATA
-      };
+      config.env = config.env || {};
+      config.env.TEST_DATA = TEST_DATA;
 
       // implement node event listeners here
       return config;
