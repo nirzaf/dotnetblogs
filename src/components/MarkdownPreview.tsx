@@ -60,12 +60,13 @@ export function MarkdownPreview({ content }: MarkdownPreviewProps) {
   };
 
   return (
-    <div className="text-gray-600 dark:text-gray-300 text-sm line-clamp-6">
+    <div className="text-gray-600 dark:text-gray-300 text-sm">
       {mdxSource ? (
         <MDXRemote {...mdxSource} components={components} />
       ) : (
         <span>{content}</span>
       )}
+      <span className="text-blue-600 dark:text-blue-400 ml-1">...</span>
     </div>
   );
 }

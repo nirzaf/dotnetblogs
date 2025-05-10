@@ -51,7 +51,7 @@ export default async function Home() {
                   <p className="text-gray-600 dark:text-gray-300 font-medium mb-2">
                     {featuredPost.description}
                   </p>
-                  <div className="prose prose-sm dark:prose-invert max-w-none line-clamp-6">
+                  <div className="prose prose-sm dark:prose-invert max-w-none line-clamp-6 overflow-hidden">
                     <MarkdownPreview content={featuredPost.contentPreview || ''} />
                   </div>
                 </div>
