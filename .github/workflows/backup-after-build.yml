@@ -1,0 +1,74 @@
+name: Create Backup Branch After Successful Build
+
+on:
+  workflow_run:
+    workflows: ["Build and Deploy"]  # Replace with your actual build workflow name
+    types:
+      - completed
+    branches:
+      - main  # Only trigger on successful builds from the main branch
+
+jobs:
+  create-backup-branch:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
+      
+      - name: Set up Git identity
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+      
+      - name: Get latest commit message
+        id: commit-message
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "message=$COMMIT_MSG" >> $GITHUB_OUTPUT
+      
+      - name: Create backup branch
+        run: |
+          # Get current date and time in format YYYY-MM-DD-HHMMSS
+          TIMESTAMP=$(date '+%Y-%m-%d-%H%M%S')
+          
+          # Create a sanitized version of the commit message for the branch name
+          COMMIT_MSG_SANITIZED=$(echo "${{ steps.commit-message.outputs.message }}" | \
+            tr -cd '[:alnum:] ._-' | \
+            tr '[:upper:]' '[:lower:]' | \
+            tr ' ' '-' | \
+            cut -c1-50)
+          
+          # Create branch name with timestamp and commit message
+          BRANCH_NAME="backup/${TIMESTAMP}-${COMMIT_MSG_SANITIZED}"
+          
+          # Create and push the backup branch
+          git checkout -b "$BRANCH_NAME"
+          git push origin "$BRANCH_NAME"
+          
+          echo "Created backup branch: $BRANCH_NAME"
+      
+      - name: Cleanup old backup branches (optional)
+        run: |
+          # Keep only the 10 most recent backup branches
+          # Get all backup branches sorted by creation date
+          BACKUP_BRANCHES=$(git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/remotes/origin/backup/)
+          
+          # Count the number of backup branches
+          BRANCH_COUNT=$(echo "$BACKUP_BRANCHES" | wc -l)
+          
+          # If we have more than 10 branches, delete the oldest ones
+          if [ "$BRANCH_COUNT" -gt 10 ]; then
+            # Skip the 10 newest branches and delete the rest
+            BRANCHES_TO_DELETE=$(echo "$BACKUP_BRANCHES" | tail -n +11)
+            
+            for BRANCH in $BRANCHES_TO_DELETE; do
+              # Extract the branch name without the origin/ prefix
+              BRANCH_NAME=${BRANCH#origin/}
+              git push origin --delete "$BRANCH_NAME"
+              echo "Deleted old backup branch: $BRANCH_NAME"
+            done
+          fi
