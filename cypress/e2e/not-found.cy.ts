@@ -13,11 +13,11 @@ describe('Not Found (404) Page', () => {
   });
 
   it('should have a link back to the homepage', () => {
-    // Check for link to homepage
-    cy.get('a[href="/"]').should('be.visible');
+    // Check for link to homepage using data-cy attribute
+    cy.get('[data-cy="home-link"]').should('be.visible');
     
     // Click on the link
-    cy.get('a[href="/"]').click();
+    cy.get('[data-cy="home-link"]').click();
     
     // Verify navigation to homepage
     cy.url().should('eq', Cypress.config().baseUrl + '/');
