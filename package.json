@@ -19,7 +19,7 @@
     "isomorphic-dompurify": "2.24.0",
     "next": "13.4.19",
     "next-mdx-remote": "4.4.1",
-    "prismjs": "1.29.0",
+    "prismjs": "1.30.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "reading-time": "1.5.0",
