@@ -27,7 +27,7 @@ export default async function Home() {
           <div className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
             <div className="md:flex">
               {featuredPost.image && (
-                <div className="md:w-1/2 h-64 md:h-auto relative">
+                <div className="md:w-2/5 h-64 md:h-auto relative">
                   <img
                     src={featuredPost.image}
                     alt={featuredPost.title}
@@ -35,20 +35,25 @@ export default async function Home() {
                   />
                 </div>
               )}
-              <div className="p-6 md:w-1/2">
+              <div className="p-6 md:w-3/5 md:max-h-[500px] overflow-y-auto">
                 <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
                   <span>{featuredPost.date}</span>
                   <span className="mx-2">•</span>
                   <span>{featuredPost.readingTime} min read</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">
+                <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-100">
                   <Link href={`/blog/${featuredPost.slug}`} className="hover:text-blue-600 dark:hover:text-blue-400">
                     {featuredPost.title}
                   </Link>
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  {featuredPost.description}
-                </p>
+                <div className="mb-4">
+                  <p className="text-gray-600 dark:text-gray-300 font-medium mb-2">
+                    {featuredPost.description}
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-6">
+                    {featuredPost.contentPreview}...
+                  </p>
+                </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {featuredPost.tags?.map((tag) => (
                     <Link

@@ -17,6 +17,7 @@ export interface Post {
   tags?: string[];
   readingTime: string;
   content: string;
+  contentPreview?: string;
   draft?: boolean;
 }
 
@@ -38,8 +39,16 @@ export async function getAllPosts(): Promise<Post[]> {
         const { data, content } = matter(fileContents);
         const readingTimeResult = readingTime(content);
 
-        // For the list view, we don't need to serialize the content
-        // This will be done in getPostBySlug for the full post view
+        // Extract a content preview (first 300 characters of the content)
+        const contentPreview = content
+          .replace(/---[\s\S]*?---/, '') // Remove frontmatter
+          .replace(/import.*?;/g, '') // Remove import statements
+          .replace(/<.*?>/g, '') // Remove HTML tags
+          .replace(/```[\s\S]*?```/g, '') // Remove code blocks
+          .replace(/\n+/g, ' ') // Replace multiple newlines with a single space
+          .trim()
+          .slice(0, 500); // Get first 500 characters
+
         return {
           slug,
           title: data.title,
@@ -48,7 +57,8 @@ export async function getAllPosts(): Promise<Post[]> {
           image: data.image || '',
           tags: data.tags || [],
           readingTime: Math.ceil(readingTimeResult.minutes).toString(),
-          content: '', // We don't need the content for the list view
+          content: '', // We don't need the full content for the list view
+          contentPreview: contentPreview, // Add content preview
           draft: data.draft === true,
         };
       })
@@ -79,6 +89,16 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     // Calculate reading time
     const readingTimeResult = readingTime(content);
 
+    // Extract a content preview (first 500 characters of the content)
+    const contentPreview = content
+      .replace(/---[\s\S]*?---/, '') // Remove frontmatter
+      .replace(/import.*?;/g, '') // Remove import statements
+      .replace(/<.*?>/g, '') // Remove HTML tags
+      .replace(/```[\s\S]*?```/g, '') // Remove code blocks
+      .replace(/\n+/g, ' ') // Replace multiple newlines with a single space
+      .trim()
+      .slice(0, 500); // Get first 500 characters
+
     // Fix HTML attributes in the content
     const fixedContent = fixHtmlAttributes(content);
 
@@ -101,6 +121,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       tags: data.tags || [],
       readingTime: Math.ceil(readingTimeResult.minutes).toString(),
       content: JSON.stringify(mdxSource),
+      contentPreview: contentPreview,
     };
   } catch (error) {
     console.error(`Error getting post by slug: ${slug}`, error);
