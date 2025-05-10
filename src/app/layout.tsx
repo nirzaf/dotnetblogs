@@ -38,12 +38,15 @@ export default function RootLayout({
           <header className="bg-white dark:bg-gray-900 shadow-md">
             <div className="container mx-auto px-4 py-3 flex justify-between items-center">
               <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
-                <div className="relative h-12 w-48 md:h-14 md:w-56">
-                  <img 
-                    src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetevlogo.png?updatedAt=1746894215111" 
-                    alt=".NET Evangelist Logo" 
-                    className="object-contain h-full w-full"
-                  />
+                <div className="flex items-center">
+                  <div className="relative h-12 w-16 md:h-14 md:w-20">
+                    <img 
+                      src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetlogo.png" 
+                      alt=".NET Logo" 
+                      className="object-contain h-full w-full"
+                    />
+                  </div>
+                  <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text ml-1">Evangelist</span>
                 </div>
               </Link>
               <div className="flex-1 mx-6 max-w-md hidden md:block">
@@ -99,12 +102,15 @@ export default function RootLayout({
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-6 md:mb-0">
                   <Link href="/" className="flex items-center hover:opacity-90 transition-opacity mb-4">
-                    <div className="relative h-10 w-40 md:h-12 md:w-48">
-                      <img 
-                        src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetevlogo.png?updatedAt=1746894215111" 
-                        alt=".NET Evangelist Logo" 
-                        className="object-contain h-full w-full"
-                      />
+                    <div className="flex items-center">
+                      <div className="relative h-10 w-14 md:h-12 md:w-16">
+                        <img 
+                          src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetlogo.png" 
+                          alt=".NET Logo" 
+                          className="object-contain h-full w-full"
+                        />
+                      </div>
+                      <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text ml-1">Evangelist</span>
                     </div>
                   </Link>
                   <p className="text-gray-600 dark:text-gray-300 mt-2">
