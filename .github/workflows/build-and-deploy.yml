@@ -9,22 +9,31 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           cache: 'npm'
-      
+
       - name: Install dependencies
-        run: npm ci
-      
+        run: |
+          # First try npm ci for faster, more reliable builds
+          npm ci || {
+            echo "npm ci failed, likely due to package.json and package-lock.json mismatch"
+            echo "Falling back to npm install to update package-lock.json"
+            # Remove node_modules to ensure clean install
+            rm -rf node_modules
+            # Use npm install instead, which will update package-lock.json
+            npm install
+          }
+
       - name: Build
         run: npm run build
-      
+
       - name: Run tests
         run: npm test

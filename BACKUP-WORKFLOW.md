@@ -5,12 +5,25 @@ This project includes an automated workflow that creates backup branches after s
 ## How It Works
 
 1. When a push is made to the `main` branch, the `Build and Deploy` workflow runs.
+   - The workflow is designed to handle package.json and package-lock.json mismatches by falling back to `npm install` if `npm ci` fails.
 2. If the build is successful, the `Create Backup Branch After Successful Build` workflow is triggered.
-3. This workflow creates a new branch with a name that includes:
+3. The backup workflow checks if package-lock.json was modified during the build process and commits any changes.
+4. This workflow creates a new branch with a name that includes:
    - A timestamp in the format `YYYY-MM-DD-HHMMSS`
    - A sanitized version of the latest commit message
    - Example: `backup/2025-05-10-123045-fix-navigation-menu`
-4. The workflow also includes an optional step to clean up old backup branches, keeping only the 10 most recent ones.
+5. The workflow also includes an optional step to clean up old backup branches, keeping only the 10 most recent ones.
+
+## Handling Package.json and Package-lock.json Mismatches
+
+The workflow is designed to handle common issues with npm dependencies:
+
+1. If `npm ci` fails due to a mismatch between package.json and package-lock.json, the workflow will:
+   - Fall back to using `npm install` which updates the package-lock.json file
+   - Continue with the build process using the updated dependencies
+   - Commit the updated package-lock.json file before creating the backup branch
+
+This ensures that your backup branches always contain a synchronized package.json and package-lock.json, preventing future build failures.
 
 ## Accessing Backup Branches
 
