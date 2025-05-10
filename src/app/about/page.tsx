@@ -23,7 +23,7 @@ export default function AboutPage() {
                 alt="Profile Picture" 
                 width={150} 
                 height={150} 
-                className="rounded-full border-2 border-gray-300 dark:border-gray-600 object-cover"
+                className="rounded-full border-2 border-gray-300 dark:border-gray-600 object-cover transition-transform duration-300 hover:scale-105"
               />
             </div>
             
