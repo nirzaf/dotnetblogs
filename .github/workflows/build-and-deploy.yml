@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
+# Add permissions to allow the workflow to push changes
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,6 +17,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for all branches and tags
+          token: ${{ github.token }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -41,7 +48,7 @@ jobs:
         if: steps.install.outputs.package_lock_updated == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add package-lock.json
           git commit -m "chore: update package-lock.json to match package.json"
           git push

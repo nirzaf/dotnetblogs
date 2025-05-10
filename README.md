@@ -158,6 +158,47 @@ npm test
 * Ensure environment variables (if any) are configured in Vercel dashboard.
 * Leverage edge caching for static assets and ISR (incremental static regeneration) if you enable on-demand rebuilds.
 
+### 9. CI/CD and Automated Workflows
+
+#### GitHub Actions Workflows
+
+This project includes two GitHub Actions workflows:
+
+1. **Build and Deploy** (`build-and-deploy.yml`)
+   * Triggered on push to the `main` branch and pull requests
+   * Installs dependencies, builds the project, and runs tests
+   * Automatically handles package.json and package-lock.json mismatches by:
+     * First trying `npm ci` for faster, more reliable builds
+     * If that fails, falling back to `npm install` to update package-lock.json
+     * Committing the updated package-lock.json file if needed
+
+2. **Create Backup Branch After Successful Build** (`backup-after-build.yml`)
+   * Triggered after a successful build on the `main` branch
+   * Creates a backup branch with a timestamp and the commit message
+   * Keeps only the 10 most recent backup branches
+
+#### Handling Package.json and Package-lock.json Mismatches
+
+If you encounter issues with mismatches between package.json and package-lock.json, you can:
+
+1. Use the provided script to fix the issue locally:
+   ```bash
+   npm run sync-deps
+   ```
+   This will remove node_modules and package-lock.json, then run npm install to regenerate package-lock.json.
+
+2. Commit the updated package-lock.json file:
+   ```bash
+   git add package-lock.json
+   git commit -m "chore: update package-lock.json to match package.json"
+   git push
+   ```
+
+3. Let the GitHub Actions workflow handle it automatically:
+   * Push your changes to the `main` branch
+   * The workflow will detect the mismatch and fix it
+   * It will commit the updated package-lock.json file
+
 ## Essential “Medium-Style” Features
 
 1. **Distraction-Free Reading Mode** (full-width content, minimal UI chrome) ([Wikipedia][5]).

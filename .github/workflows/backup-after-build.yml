@@ -8,6 +8,10 @@ on:
     branches:
       - main  # Only trigger on successful builds from the main branch
 
+# Add permissions to allow the workflow to push changes
+permissions:
+  contents: write
+
 jobs:
   create-backup-branch:
     runs-on: ubuntu-latest
@@ -18,11 +22,12 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Fetch all history for all branches and tags
+          token: ${{ github.token }}
 
       - name: Set up Git identity
         run: |
           git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Get latest commit message
         id: commit-message
