@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { getAllPosts } from '@/lib/mdxUtils';
 import { PostCard } from '@/components/PostCard';
 import { MarkdownPreview } from '@/components/MarkdownPreview';
+import { HeaderSearch } from '@/components/HeaderSearch';
 
 export const metadata: Metadata = {
   title: '.NET Evangelist',
@@ -20,6 +21,17 @@ export default async function Home() {
         <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 text-blue-600 dark:text-blue-400 leading-relaxed max-w-3xl mx-auto">
           Exploring modern software development with .NET, web technologies, and cloud solutions
         </h2>
+        {/* Mobile logo and search input - only visible on mobile */}
+        <div className="md:hidden mx-auto max-w-md px-4 mb-6">
+          <div className="flex justify-center mb-4">
+            <img 
+              src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetevlogo.png?updatedAt=1746894215111" 
+              alt=".NET Evangelist Logo" 
+              className="h-12 object-contain"
+            />
+          </div>
+          <HeaderSearch />
+        </div>
       </div>
 
       {featuredPost && (

@@ -82,25 +82,7 @@ export function MobileMenu() {
           >
             About
           </Link>
-          <div className="border-t border-gray-200 dark:border-gray-700 my-2"></div>
-          <div className="px-4 py-2">
-            <form action="/search" method="get" className="flex">
-              <input
-                type="text"
-                name="q"
-                placeholder="Search..."
-                className="w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-l-md bg-white dark:bg-gray-800 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500"
-              />
-              <button
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded-r-md"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
-            </form>
-          </div>
+          {/* Search form removed from mobile menu as it's now directly on the home page */}
         </div>
       )}
     </div>

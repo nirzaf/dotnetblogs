@@ -1,5 +1,6 @@
 import { Inter, Roboto_Mono } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -35,8 +36,16 @@ export default function RootLayout({
       <body className={`${inter.variable} ${robotoMono.variable} antialiased min-h-screen flex flex-col`}>
         <ThemeProvider>
           <header className="bg-white dark:bg-gray-900 shadow-md">
-            <div className="container mx-auto px-4 py-5 flex justify-between items-center">
-              <Link href="/" className="text-2xl font-bold text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">.NET Evangelist</Link>
+            <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+              <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
+                <div className="relative h-12 w-48 md:h-14 md:w-56">
+                  <img 
+                    src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetevlogo.png?updatedAt=1746894215111" 
+                    alt=".NET Evangelist Logo" 
+                    className="object-contain h-full w-full"
+                  />
+                </div>
+              </Link>
               <div className="flex-1 mx-6 max-w-md hidden md:block">
                 <HeaderSearch />
               </div>
@@ -89,8 +98,14 @@ export default function RootLayout({
             <div className="container mx-auto px-4">
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-6 md:mb-0">
-                  <Link href="/" className="text-xl font-bold text-gray-800 dark:text-white mb-4 inline-block">
-                    .NET Evangelist
+                  <Link href="/" className="flex items-center hover:opacity-90 transition-opacity mb-4">
+                    <div className="relative h-10 w-40 md:h-12 md:w-48">
+                      <img 
+                        src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetevlogo.png?updatedAt=1746894215111" 
+                        alt=".NET Evangelist Logo" 
+                        className="object-contain h-full w-full"
+                      />
+                    </div>
                   </Link>
                   <p className="text-gray-600 dark:text-gray-300 mt-2">
                     © 2025 .NET Evangelist. All rights reserved.
