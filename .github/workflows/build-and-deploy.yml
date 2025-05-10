@@ -30,6 +30,12 @@ jobs:
       - name: Install dependencies
         id: install
         run: |
+          if [[ ! -f package-lock.json && ! -f yarn.lock && ! -f npm-shrinkwrap.json ]]; then
+            echo "Error: No dependency lock file found (package-lock.json, yarn.lock, or npm-shrinkwrap.json)."
+            echo "Please commit a lock file to the repository."
+            exit 1
+          fi
+          
           echo "Attempting a clean install of dependencies..."
           rm -rf node_modules
           npm ci || (
