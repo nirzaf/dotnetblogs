@@ -30,9 +30,13 @@ jobs:
       - name: Install dependencies
         id: install
         run: |
-          # First try npm ci for faster, more reliable builds
+          # First try to fix package-lock.json without installing modules
+          echo "Generating a clean package-lock.json..."
+          npm install --package-lock-only --ignore-scripts
+
+          # Then try npm ci for faster, more reliable builds
           if npm ci; then
-            echo "package_lock_updated=false" >> $GITHUB_OUTPUT
+            echo "package_lock_updated=true" >> $GITHUB_OUTPUT
           else
             echo "npm ci failed, likely due to package.json and package-lock.json mismatch"
             echo "Falling back to npm install to update package-lock.json"
@@ -52,6 +56,9 @@ jobs:
           git add package-lock.json
           git commit -m "chore: update package-lock.json to match package.json"
           git push
+
+      - name: TypeScript Check
+        run: npx tsc --noEmit
 
       - name: Build
         run: npm run build

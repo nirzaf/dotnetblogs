@@ -185,7 +185,10 @@ If you encounter issues with mismatches between package.json and package-lock.js
    ```bash
    npm run sync-deps
    ```
-   This will remove node_modules and package-lock.json, then run npm install to regenerate package-lock.json.
+   This script will:
+   - Remove node_modules and package-lock.json
+   - Generate a clean package-lock.json without installing modules
+   - Install dependencies properly using npm ci or npm install as a fallback
 
 2. Commit the updated package-lock.json file:
    ```bash
@@ -198,6 +201,20 @@ If you encounter issues with mismatches between package.json and package-lock.js
    * Push your changes to the `main` branch
    * The workflow will detect the mismatch and fix it
    * It will commit the updated package-lock.json file
+
+#### TypeScript Configuration
+
+The project includes proper TypeScript configuration for both Next.js and Cypress:
+
+1. **Main TypeScript Configuration** (`tsconfig.json`):
+   - Includes `baseUrl` set to the root directory
+   - Configures path aliases for imports
+   - Includes all TypeScript files in the project
+
+2. **Cypress TypeScript Configuration** (`cypress/tsconfig.json`):
+   - Extends the main configuration
+   - Adds Cypress-specific types
+   - Disables isolatedModules for better compatibility with Cypress
 
 ## Essential “Medium-Style” Features
 
