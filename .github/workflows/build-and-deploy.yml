@@ -52,8 +52,14 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add package-lock.json
-          git commit -m "chore: update package-lock.json to match package.json"
-          git push
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to package-lock.json, skipping commit"
+          else
+            git commit -m "chore: update package-lock.json to match package.json"
+            git push
+          fi
 
       - name: TypeScript Check
         run: |
