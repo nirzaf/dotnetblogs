@@ -1,6 +1,0 @@
-{
-  "version": 2,
-  "buildCommand": "npm run build",
-  "installCommand": "npm install --no-optional && npm install tailwindcss@3.3.6 postcss autoprefixer",
-  "framework": "nextjs"
-}
