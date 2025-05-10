@@ -8,6 +8,9 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
+// Import the test data helper
+import { getViewportSize } from './test-data';
+
 // Declare global Cypress namespace to add custom commands
 declare global {
   namespace Cypress {
@@ -193,16 +196,11 @@ Cypress.Commands.add('checkPostCard', () => {
 
 // Custom command to test responsive behavior
 Cypress.Commands.add('testResponsive', (viewport: string, testFunction: () => void) => {
-  // Get viewport dimensions
-  const viewports = {
-    mobile: [375, 667],
-    tablet: [768, 1024],
-    desktop: [1280, 800],
-    largeDesktop: [1920, 1080]
-  };
+  // Get viewport dimensions from test data
+  const viewportName = viewport as 'mobile' | 'tablet' | 'desktop' | 'largeDesktop';
+  const { width, height } = getViewportSize(viewportName);
 
   // Set viewport
-  const [width, height] = viewports[viewport as keyof typeof viewports] || viewports.desktop;
   cy.viewport(width, height);
 
   // Run test function

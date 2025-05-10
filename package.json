@@ -12,16 +12,17 @@
     "lint": "next lint",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "test": "cypress run"
+    "test": "cypress run",
+    "sync-deps": "./scripts/sync-package-lock.sh"
   },
   "dependencies": {
     "autoprefixer": "10.4.16",
     "gray-matter": "4.0.3",
     "isomorphic-dompurify": "2.24.0",
-    "next": "14.2.26",
+    "next": "14.0.4",
     "next-mdx-remote": "4.4.1",
     "postcss": "8.4.32",
-    "prismjs": "1.30.0",
+    "prismjs": "1.29.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "reading-time": "1.5.0",
@@ -30,12 +31,12 @@
   },
   "devDependencies": {
     "@types/node": "18.19.3",
-    "@types/prismjs": "^1.26.5",
+    "@types/prismjs": "1.26.0",
     "@types/react": "18.2.42",
     "@types/react-dom": "18.2.17",
-    "cypress": "^13.6.1",
+    "cypress": "13.6.1",
     "eslint": "8.55.0",
-    "eslint-config-next": "13.4.19",
+    "eslint-config-next": "14.0.4",
     "typescript": "5.3.3"
   }
 }

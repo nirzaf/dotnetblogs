@@ -1,5 +1,24 @@
 import { defineConfig } from 'cypress';
 
+// Define custom test data in a separate file or as constants
+// to avoid TypeScript compilation errors
+const TEST_DATA = {
+  knownBlogSlugs: [
+    'building-an-angular-project-with-bootstrap-4-and-firebase',
+    'advanced-csharp-programming-delegates-events-generics-async-await-and-linq',
+    'you-are-doing-validation-wrong-in-net-code',
+    'mastering-sql-the-power-of-sum-with-case-when',
+    'performance-optimization-techniques-in-python'
+  ],
+  knownTags: ['Angular', 'C#', 'Python', 'SQL', 'Validation'],
+  viewportSizes: {
+    mobile: { width: 375, height: 667 },
+    tablet: { width: 768, height: 1024 },
+    desktop: { width: 1280, height: 800 },
+    largeDesktop: { width: 1920, height: 1080 }
+  }
+};
+
 export default defineConfig({
   e2e: {
     baseUrl: 'http://localhost:3000',
@@ -15,25 +34,13 @@ export default defineConfig({
       runMode: 2,
       openMode: 1
     },
-    // Custom configuration for testing
-    // These properties are commented out as they're not recognized by the TypeScript compiler
-    /*
-    viewportPresets: {
-      mobile: { width: 375, height: 667, deviceScaleFactor: 2, isMobile: true },
-      tablet: { width: 768, height: 1024, deviceScaleFactor: 1, isMobile: true },
-      desktop: { width: 1280, height: 800, deviceScaleFactor: 1, isMobile: false },
-      largeDesktop: { width: 1920, height: 1080, deviceScaleFactor: 1, isMobile: false }
-    },
-    knownBlogSlugs: [
-      'building-an-angular-project-with-bootstrap-4-and-firebase',
-      'advanced-csharp-programming-delegates-events-generics-async-await-and-linq',
-      'you-are-doing-validation-wrong-in-net-code',
-      'mastering-sql-the-power-of-sum-with-case-when',
-      'performance-optimization-techniques-in-python'
-    ],
-    knownTags: ['Angular', 'C#', 'Python', 'SQL', 'Validation'],
-    */
     setupNodeEvents(on, config) {
+      // Add test data to config object so it's available in tests
+      config.env = {
+        ...config.env,
+        TEST_DATA
+      };
+
       // implement node event listeners here
       return config;
     },

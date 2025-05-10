@@ -21,16 +21,30 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
+        id: install
         run: |
           # First try npm ci for faster, more reliable builds
-          npm ci || {
+          if npm ci; then
+            echo "package_lock_updated=false" >> $GITHUB_OUTPUT
+          else
             echo "npm ci failed, likely due to package.json and package-lock.json mismatch"
             echo "Falling back to npm install to update package-lock.json"
             # Remove node_modules to ensure clean install
             rm -rf node_modules
             # Use npm install instead, which will update package-lock.json
             npm install
-          }
+            echo "package_lock_updated=true" >> $GITHUB_OUTPUT
+          fi
+
+      # Commit updated package-lock.json if it was changed
+      - name: Commit package-lock.json if updated
+        if: steps.install.outputs.package_lock_updated == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add package-lock.json
+          git commit -m "chore: update package-lock.json to match package.json"
+          git push
 
       - name: Build
         run: npm run build
