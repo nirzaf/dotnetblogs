@@ -39,15 +39,17 @@ export async function getAllPosts(): Promise<Post[]> {
         const { data, content } = matter(fileContents);
         const readingTimeResult = readingTime(content);
 
-        // Extract a content preview (first 300 characters of the content)
+        // Extract a content preview for markdown rendering
         const contentPreview = content
           .replace(/---[\s\S]*?---/, '') // Remove frontmatter
           .replace(/import.*?;/g, '') // Remove import statements
-          .replace(/<.*?>/g, '') // Remove HTML tags
-          .replace(/```[\s\S]*?```/g, '') // Remove code blocks
-          .replace(/\n+/g, ' ') // Replace multiple newlines with a single space
+          .replace(/<div.*?>[\s\S]*?<\/div>/g, '') // Remove div blocks
+          .replace(/<Image.*?\/>|<img.*?\/>/g, '[image]') // Replace image tags with placeholder
           .trim()
-          .slice(0, 500); // Get first 500 characters
+          .split('\n\n') // Split by paragraphs
+          .slice(0, 3) // Take first 3 paragraphs
+          .join('\n\n') // Join back with paragraph breaks
+          .slice(0, 600); // Limit to 600 characters
 
         return {
           slug,
@@ -89,15 +91,17 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     // Calculate reading time
     const readingTimeResult = readingTime(content);
 
-    // Extract a content preview (first 500 characters of the content)
+    // Extract a content preview for markdown rendering
     const contentPreview = content
       .replace(/---[\s\S]*?---/, '') // Remove frontmatter
       .replace(/import.*?;/g, '') // Remove import statements
-      .replace(/<.*?>/g, '') // Remove HTML tags
-      .replace(/```[\s\S]*?```/g, '') // Remove code blocks
-      .replace(/\n+/g, ' ') // Replace multiple newlines with a single space
+      .replace(/<div.*?>[\s\S]*?<\/div>/g, '') // Remove div blocks
+      .replace(/<Image.*?\/>|<img.*?\/>/g, '[image]') // Replace image tags with placeholder
       .trim()
-      .slice(0, 500); // Get first 500 characters
+      .split('\n\n') // Split by paragraphs
+      .slice(0, 3) // Take first 3 paragraphs
+      .join('\n\n') // Join back with paragraph breaks
+      .slice(0, 600); // Limit to 600 characters
 
     // Fix HTML attributes in the content
     const fixedContent = fixHtmlAttributes(content);

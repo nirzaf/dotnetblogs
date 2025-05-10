@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { getAllPosts } from '@/lib/mdxUtils';
 import { PostCard } from '@/components/PostCard';
+import { MarkdownPreview } from '@/components/MarkdownPreview';
 
 export const metadata: Metadata = {
   title: '.NET Evangelist',
@@ -50,9 +51,9 @@ export default async function Home() {
                   <p className="text-gray-600 dark:text-gray-300 font-medium mb-2">
                     {featuredPost.description}
                   </p>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-6">
-                    {featuredPost.contentPreview}...
-                  </p>
+                  <div className="prose prose-sm dark:prose-invert max-w-none line-clamp-6">
+                    <MarkdownPreview content={featuredPost.contentPreview || ''} />
+                  </div>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {featuredPost.tags?.map((tag) => (
