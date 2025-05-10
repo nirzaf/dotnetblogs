@@ -67,12 +67,71 @@ export async function getAllPosts(): Promise<Post[]> {
   );
   // Filter out drafts using the raw frontmatter
   const publishedPosts = allPostsRaw.filter((post) => !post.draft);
-  // Sort posts by date
-  return publishedPosts.sort((a, b) => {
-    if (a.date < b.date) {
+  // Remove duplicate posts (based on slug)
+  const uniquePosts = Array.from(new Map(publishedPosts.map(post => [post.slug, post])).values());
+
+  // Convert dates to consistent format for comparison
+  const parseDate = (dateStr: string): Date => {
+    if (!dateStr) return new Date(0);
+    
+    // Try direct parsing first
+    let date = new Date(dateStr);
+    if (!isNaN(date.getTime())) {
+      return date;
+    }
+    
+    // Handle month name formats like 'May 10 2025' or 'Oct 12 2024'
+    const monthNamePattern = /^([A-Za-z]{3,}) (\d{1,2}) (\d{4})$/;
+    const monthNameMatch = dateStr.match(monthNamePattern);
+    if (monthNameMatch) {
+      const [_, month, day, year] = monthNameMatch;
+      const monthMap: {[key: string]: number} = {
+        'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
+        'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11,
+        'January': 0, 'February': 1, 'March': 2, 'April': 3, 'June': 5,
+        'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11
+      };
+      
+      if (monthMap[month] !== undefined) {
+        return new Date(parseInt(year), monthMap[month], parseInt(day));
+      }
+    }
+    
+    // Handle ISO-like formats (YYYY-MM-DD)
+    const isoPattern = /^(\d{4})-(\d{1,2})-(\d{1,2})$/;
+    const isoMatch = dateStr.match(isoPattern);
+    if (isoMatch) {
+      const [_, year, month, day] = isoMatch;
+      return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+    }
+    
+    // Handle numeric formats like MM/DD/YYYY
+    const numericPattern = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+    const numericMatch = dateStr.match(numericPattern);
+    if (numericMatch) {
+      const [_, month, day, year] = numericMatch;
+      return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+    }
+    
+    // If all parsing attempts fail, return a far past date
+    console.warn(`Failed to parse date: ${dateStr}`);
+    return new Date(0);
+  };
+
+  // Sort posts by date (newest first) and then by title (alphabetically descending) for same dates
+  return uniquePosts.sort((a, b) => {
+    // Compare dates first
+    const dateA = parseDate(a.date);
+    const dateB = parseDate(b.date);
+    
+    if (dateA < dateB) {
       return 1;
-    } else {
+    } else if (dateA > dateB) {
       return -1;
+    } 
+    // If dates are equal, sort by title in descending order
+    else {
+      return b.title.localeCompare(a.title);
     }
   });
 }
