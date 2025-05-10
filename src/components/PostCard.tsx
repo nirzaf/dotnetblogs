@@ -2,6 +2,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Post } from '@/lib/mdxUtils';
 
+// Format date for consistent display
+function formatDate(dateStr: string): string {
+  try {
+    const date = new Date(dateStr);
+    if (!isNaN(date.getTime())) {
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+    }
+    return dateStr; // Return original string if parsing fails
+  } catch (error) {
+    return dateStr; // Return original string if any error occurs
+  }
+}
+
 interface PostCardProps {
   post: Post;
   highlightTag?: string;
@@ -24,7 +41,7 @@ export function PostCard({ post, highlightTag }: PostCardProps) {
       )}
       <div className="p-4">
         <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-          <span>{post.date}</span>
+          <span>{formatDate(post.date)}</span>
           <span className="mx-2">•</span>
           <span>{post.readingTime} min read</span>
         </div>

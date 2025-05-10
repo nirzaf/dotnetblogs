@@ -19,6 +19,7 @@ export interface Post {
   content: string;
   contentPreview?: string;
   draft?: boolean;
+  sortDate?: number; // Added for date sorting
 }
 
 export async function getAllPosts(): Promise<Post[]> {
@@ -44,17 +45,26 @@ export async function getAllPosts(): Promise<Post[]> {
           .replace(/---[\s\S]*?---/, '') // Remove frontmatter
           .replace(/import.*?;/g, '') // Remove import statements
           .replace(/<div.*?>[\s\S]*?<\/div>/g, '') // Remove div blocks
-          .replace(/<Image.*?\/>|<img.*?\/>/g, '[image]') // Replace image tags with placeholder
+          .replace(/<Image.*?\/>|<img.*?\/?>/g, '[image]') // Replace image tags with placeholder
           .trim()
           .split('\n\n') // Split by paragraphs
           .slice(0, 3) // Take first 3 paragraphs
           .join('\n\n') // Join back with paragraph breaks
           .slice(0, 600); // Limit to 600 characters
 
+        // Ensure we have a valid date for sorting
+        // Use current date as fallback if no date is provided
+        let postDate = data.pubDate || data.date || new Date().toISOString();
+        
+        // If date is just a year, make it January 1st of that year
+        if (/^\d{4}$/.test(postDate)) {
+          postDate = `Jan 1 ${postDate}`;
+        }
+
         return {
           slug,
           title: data.title,
-          date: data.date,
+          date: postDate,
           description: data.description || '',
           image: data.image || '',
           tags: data.tags || [],
@@ -70,6 +80,19 @@ export async function getAllPosts(): Promise<Post[]> {
   // Remove duplicate posts (based on slug)
   const uniquePosts = Array.from(new Map(publishedPosts.map(post => [post.slug, post])).values());
 
+  // Standardize date format in posts for consistent display and sorting
+  const standardizeDates = (posts: Post[]): Post[] => {
+    return posts.map(post => {
+      // Create a standardized date for sorting
+      const parsedDate = parseDate(post.date);
+      // Add a sortDate property for internal use
+      return {
+        ...post,
+        sortDate: parsedDate.getTime() // Store as timestamp for easy comparison
+      } as Post & { sortDate: number };
+    });
+  };
+
   // Convert dates to consistent format for comparison
   const parseDate = (dateStr: string): Date => {
     if (!dateStr) return new Date(0);
@@ -81,7 +104,7 @@ export async function getAllPosts(): Promise<Post[]> {
     }
     
     // Handle month name formats like 'May 10 2025' or 'Oct 12 2024'
-    const monthNamePattern = /^([A-Za-z]{3,}) (\d{1,2}) (\d{4})$/;
+    const monthNamePattern = /^([A-Za-z]{3,}) (\d{1,2}),? (\d{4})$/;
     const monthNameMatch = dateStr.match(monthNamePattern);
     if (monthNameMatch) {
       const [_, month, day, year] = monthNameMatch;
@@ -113,27 +136,60 @@ export async function getAllPosts(): Promise<Post[]> {
       return new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
     }
     
-    // If all parsing attempts fail, return a far past date
+    // Handle 'Oct 01 2024' format (without comma)
+    const monthDayYearPattern = /^([A-Za-z]{3}) (\d{2}) (\d{4})$/;
+    const monthDayYearMatch = dateStr.match(monthDayYearPattern);
+    if (monthDayYearMatch) {
+      const [_, month, day, year] = monthDayYearMatch;
+      const monthMap: {[key: string]: number} = {
+        'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
+        'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11
+      };
+      
+      if (monthMap[month] !== undefined) {
+        return new Date(parseInt(year), monthMap[month], parseInt(day));
+      }
+    }
+    
+    // If all parsing attempts fail, return current date to prioritize posts without dates
     console.warn(`Failed to parse date: ${dateStr}`);
-    return new Date(0);
+    return new Date();
   };
 
+  // Standardize dates for consistent sorting
+  const postsWithStandardDates = standardizeDates(uniquePosts);
+  
+  // Debug: Log posts with their dates for troubleshooting
+  console.log('Posts with dates before sorting:');
+  postsWithStandardDates.forEach(post => {
+    console.log(`${post.title}: ${post.date} => ${new Date(post.sortDate || 0).toISOString()}`);
+  });
+
   // Sort posts by date (newest first) and then by title (alphabetically descending) for same dates
-  return uniquePosts.sort((a, b) => {
-    // Compare dates first
-    const dateA = parseDate(a.date);
-    const dateB = parseDate(b.date);
+  const sortedPosts = postsWithStandardDates.sort((a, b) => {
+    // Compare standardized dates first (using timestamp for reliable comparison)
+    // Use 0 as default if sortDate is undefined
+    const dateA = a.sortDate || 0;
+    const dateB = b.sortDate || 0;
     
     if (dateA < dateB) {
-      return 1;
+      return 1; // b is newer, should come first
     } else if (dateA > dateB) {
-      return -1;
+      return -1; // a is newer, should come first
     } 
     // If dates are equal, sort by title in descending order
     else {
       return b.title.localeCompare(a.title);
     }
   });
+  
+  // Debug: Log posts after sorting
+  console.log('Posts after sorting by date (newest first):');
+  sortedPosts.forEach(post => {
+    console.log(`${post.title}: ${post.date} => ${new Date(post.sortDate || 0).toISOString()}`);
+  });
+  
+  return sortedPosts;
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
