@@ -13,9 +13,20 @@ const nextConfig = {
         hostname: 'ik.imagekit.io',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**',
+      },
     ],
   },
-  // Other Next.js config options can be added here
+  // Add other configuration options
+  reactStrictMode: true,
+  swcMinify: true,
+  // Increase the timeout for builds on Vercel
+  experimental: {
+    serverComponentsExternalPackages: [],
+  },
 };
 
 module.exports = nextConfig;
