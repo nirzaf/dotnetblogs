@@ -2,6 +2,5 @@
   "version": 2,
   "buildCommand": "npm run build",
   "installCommand": "npm install --no-optional",
-  "framework": "nextjs",
-  "nodeVersion": "18.18.0"
+  "framework": "nextjs"
 }
