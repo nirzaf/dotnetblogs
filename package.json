@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "18.x"
+    "node": ">=18.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -30,8 +30,10 @@
   },
   "devDependencies": {
     "@types/node": "18.19.3",
+    "@types/prismjs": "^1.26.5",
     "@types/react": "18.2.42",
     "@types/react-dom": "18.2.17",
+    "cypress": "^13.6.1",
     "eslint": "8.55.0",
     "eslint-config-next": "13.4.19",
     "typescript": "5.3.3"

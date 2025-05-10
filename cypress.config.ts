@@ -15,34 +15,15 @@ export default defineConfig({
       runMode: 2,
       openMode: 1
     },
-    // Define viewports for responsive testing
+    // Custom configuration for testing
+    // These properties are commented out as they're not recognized by the TypeScript compiler
+    /*
     viewportPresets: {
-      mobile: {
-        width: 375,
-        height: 667,
-        deviceScaleFactor: 2,
-        isMobile: true
-      },
-      tablet: {
-        width: 768,
-        height: 1024,
-        deviceScaleFactor: 1,
-        isMobile: true
-      },
-      desktop: {
-        width: 1280,
-        height: 800,
-        deviceScaleFactor: 1,
-        isMobile: false
-      },
-      largeDesktop: {
-        width: 1920,
-        height: 1080,
-        deviceScaleFactor: 1,
-        isMobile: false
-      }
+      mobile: { width: 375, height: 667, deviceScaleFactor: 2, isMobile: true },
+      tablet: { width: 768, height: 1024, deviceScaleFactor: 1, isMobile: true },
+      desktop: { width: 1280, height: 800, deviceScaleFactor: 1, isMobile: false },
+      largeDesktop: { width: 1920, height: 1080, deviceScaleFactor: 1, isMobile: false }
     },
-    // Known blog post slugs for testing
     knownBlogSlugs: [
       'building-an-angular-project-with-bootstrap-4-and-firebase',
       'advanced-csharp-programming-delegates-events-generics-async-await-and-linq',
@@ -50,14 +31,8 @@ export default defineConfig({
       'mastering-sql-the-power-of-sum-with-case-when',
       'performance-optimization-techniques-in-python'
     ],
-    // Known tags for testing
-    knownTags: [
-      'Angular',
-      'C#',
-      'Python',
-      'SQL',
-      'Validation'
-    ],
+    knownTags: ['Angular', 'C#', 'Python', 'SQL', 'Validation'],
+    */
     setupNodeEvents(on, config) {
       // implement node event listeners here
       return config;
