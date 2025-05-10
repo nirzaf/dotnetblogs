@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -7,13 +7,13 @@ import { HeaderSearch } from "@/components/HeaderSearch";
 import { MobileMenu } from "@/components/MobileMenu";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
   subsets: ["latin"],
 });
 
@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${inter.variable} ${robotoMono.variable} antialiased min-h-screen flex flex-col`}>
         <ThemeProvider>
           <header className="bg-white dark:bg-gray-900 shadow-md">
             <div className="container mx-auto px-4 py-5 flex justify-between items-center">
