@@ -22,10 +22,9 @@ const nextConfig = {
   },
   // Add other configuration options
   reactStrictMode: true,
-  swcMinify: true,
   // Increase the timeout for builds on Vercel
   experimental: {
-    serverComponentsExternalPackages: [],
+    // Empty for now
   },
 };
 
