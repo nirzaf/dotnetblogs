@@ -27,7 +27,8 @@ export default function AboutPage() {
               />
             </div>
             
-            <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">M.F.M Fazrin</h1>
+            <h1 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">About</h1>
+            <h2 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">M.F.M Fazrin</h2>
             <h2 className="text-xl text-blue-600 dark:text-blue-400 mb-4">MSc in Software Engineering</h2>
             
             <div className="flex flex-wrap justify-center gap-4 mb-4 text-gray-700 dark:text-gray-300">
@@ -53,6 +54,7 @@ export default function AboutPage() {
               <Link 
                 href="https://www.freelancer.com/affiliates/email/79340852/" 
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center hover:underline"
                 aria-label="Hire me on Freelancer"
               >
@@ -62,6 +64,7 @@ export default function AboutPage() {
               <Link 
                 href="https://github.com/nirzaf" 
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center hover:underline"
                 aria-label="View my GitHub profile"
               >
@@ -71,6 +74,7 @@ export default function AboutPage() {
               <Link 
                 href="https://linkedin.com/in/mfmfazrin" 
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center hover:underline"
                 aria-label="Connect with me on LinkedIn"
               >
@@ -80,6 +84,7 @@ export default function AboutPage() {
               <Link 
                 href="https://nirzaf.github.io" 
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center hover:underline"
                 aria-label="View my portfolio"
               >
@@ -89,7 +94,7 @@ export default function AboutPage() {
             </div>
             
             <div className="flex justify-center mb-4">
-              <Link href="https://www.buymeacoffee.com/fazrinphccs" target="_blank">
+              <Link href="https://www.buymeacoffee.com/fazrinphccs" target="_blank" rel="noopener noreferrer">
                 <Image 
                   src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
                   alt="Buy Me A Coffee" 
@@ -102,6 +107,23 @@ export default function AboutPage() {
             <p className="text-gray-600 dark:text-gray-400 text-sm">
               Your contribution helps me create more content and improve this blog.
             </p>
+          </div>
+          
+          {/* Contact Section */}
+          <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
+              Contact
+            </h2>
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              Get in touch with me via email or through the contact form below.
+            </p>
+            <div className="text-gray-700 dark:text-gray-300 space-y-4">
+              <p>
+                As a Senior Software Development Specialist at the Primary Health Care Corporation in
+                Qatar, I develop robust, high-concurrency web applications with a strong focus on
+                delivering a seamless and positive end-user experience.
+              </p>
+            </div>
           </div>
           
           {/* Summary Section */}
@@ -336,6 +358,7 @@ export default function AboutPage() {
                 <Link 
                   href="https://www.freelancer.com/affiliates/email/79340852/" 
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-600 dark:text-blue-400 hover:underline"
                 >
                   Hire me on Freelancer.com
