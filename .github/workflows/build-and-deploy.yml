@@ -30,22 +30,14 @@ jobs:
       - name: Install dependencies
         id: install
         run: |
-          # First try to fix package-lock.json without installing modules
-          echo "Generating a clean package-lock.json..."
-          npm install --package-lock-only --ignore-scripts
-
-          # Then try npm ci for faster, more reliable builds
-          if npm ci; then
-            echo "package_lock_updated=true" >> $GITHUB_OUTPUT
-          else
-            echo "npm ci failed, likely due to package.json and package-lock.json mismatch"
-            echo "Falling back to npm install to update package-lock.json"
-            # Remove node_modules to ensure clean install
-            rm -rf node_modules
-            # Use npm install instead, which will update package-lock.json
+          echo "Attempting a clean install of dependencies..."
+          rm -rf node_modules
+          npm ci || (
+            echo "npm ci failed. Falling back to npm install..."
+            rm -rf node_modules package-lock.json
             npm install
-            echo "package_lock_updated=true" >> $GITHUB_OUTPUT
-          fi
+          )
+          echo "package_lock_updated=true" >> $GITHUB_OUTPUT
 
       # Commit updated package-lock.json if it was changed
       - name: Commit package-lock.json if updated
