@@ -23,18 +23,6 @@ export default async function Home() {
         </h2>
         {/* Mobile logo and search input - only visible on mobile */}
         <div className="md:hidden mx-auto max-w-md px-4 mb-6">
-          <div className="flex justify-center mb-4">
-            <div className="flex items-center">
-              <div className="relative h-12 w-16">
-                <img 
-                  src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetlogo.png" 
-                  alt=".NET Logo" 
-                  className="object-contain h-full w-full"
-                />
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text ml-1">Evangelist</span>
-            </div>
-          </div>
           <HeaderSearch />
         </div>
       </div>

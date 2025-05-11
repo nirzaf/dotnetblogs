@@ -41,7 +41,7 @@ export default function RootLayout({
                 <div className="flex items-center">
                   <div className="relative h-12 w-16 md:h-14 md:w-20">
                     <img 
-                      src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetlogo.png" 
+                      src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetlogo.png?updatedAt=1746982028912" 
                       alt=".NET Logo" 
                       className="object-contain h-full w-full"
                     />
@@ -105,7 +105,7 @@ export default function RootLayout({
                     <div className="flex items-center">
                       <div className="relative h-10 w-14 md:h-12 md:w-16">
                         <img 
-                          src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetlogo.png" 
+                          src="https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/dotnetlogo.png?updatedAt=1746982028912" 
                           alt=".NET Logo" 
                           className="object-contain h-full w-full"
                         />
