@@ -80,8 +80,12 @@ export function SearchBar() {
   return (
     <div className="relative w-full max-w-xl mx-auto" ref={searchRef}>
       <form onSubmit={handleSubmit} className="relative">
+        <label htmlFor="search-input" className="sr-only">Search posts</label>
         <input
           type="text"
+          id="search-input"
+          name="search-input"
+          aria-label="Search posts"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
@@ -93,7 +97,7 @@ export function SearchBar() {
         />
         <button
           type="submit"
-          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400"
+          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-full p-1"
           aria-label="Search"
         >
           <svg

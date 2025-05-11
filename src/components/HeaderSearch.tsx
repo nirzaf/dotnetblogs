@@ -69,8 +69,12 @@ export function HeaderSearch() {
     <div className="relative" ref={searchRef}>
       <form onSubmit={handleSubmit}>
         <div className="relative">
+          <label htmlFor="header-search" className="sr-only">Search posts</label>
           <input
             type="text"
+            id="header-search"
+            name="header-search"
+            aria-label="Search posts"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);

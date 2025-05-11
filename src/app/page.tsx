@@ -18,6 +18,9 @@ export default async function Home() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-10">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          .NET Evangelist Tech Blogs
+        </h1>
         <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 text-blue-600 dark:text-blue-400 leading-relaxed max-w-3xl mx-auto">
           Exploring modern software development with .NET, web technologies, and cloud solutions
         </h2>
