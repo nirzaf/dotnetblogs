@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
         title: post.title,
         description: post.description,
         tags: post.tags,
-        date: post.date,
+        pubDate: post.pubDate,
       }))
     );
   } catch (error) {

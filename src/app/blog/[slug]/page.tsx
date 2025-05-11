@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
       title: post.title,
       description: post.description,
       type: 'article',
-      publishedTime: post.date,
+      publishedTime: post.pubDate,
       authors: ['Your Name'],
       images: post.image ? [{ url: post.image }] : [],
     },
@@ -32,16 +32,21 @@ export async function generateMetadata({ params }) {
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  const slugs = posts.map((post) => post.slug);
+  slugs.forEach(slug => {
+  const codes = Array.from(slug).map(c => (c as string).charCodeAt(0)).join(',');
+  console.log(`[generateStaticParams] Slug: '${slug}' | CharCodes: [${codes}]`);
+});
+console.log('[generateStaticParams] Slugs:', slugs);
+  return slugs.map((slug) => ({ slug }));
 }
 
 // @ts-expect-error: Next.js app directory route handler params are not typed
 export default async function BlogPostPage({ params }) {
   // Ensure params is properly awaited
   const { slug } = await params;
+  const codes = Array.from(slug).map(c => (c as string).charCodeAt(0)).join(',');
+  console.log(`[BlogPostPage] Received slug: '${slug}' | CharCodes: [${codes}]`);
   const post = await getPostBySlug(slug);
 
   if (!post) {
@@ -52,7 +57,7 @@ export default async function BlogPostPage({ params }) {
     <article className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="mb-8">
         <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
-          <span>{post.date}</span>
+          <span>{post.pubDate}</span>
           <span className="mx-2">•</span>
           <span>{post.readingTime} min read</span>
         </div>

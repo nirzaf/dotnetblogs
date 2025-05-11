@@ -20,7 +20,7 @@ Start with a YAML block wrapped in `---`.
 ```yaml
 ---
 title: A clear title under 80 characters
-date: 'YYYY-MM-DD'
+pubDate: 'YYYY-MM-DD'
 description: 'A concise summary under 250 characters'
 image: 'https://ik.imagekit.io/quadrate/assets/img/dotnetevangelist/hero-image-placeholder.png?updatedAt=1746911450655' # will replace later
 tags: ['tag1', 'tag2']

@@ -43,7 +43,7 @@ export default async function Home() {
               )}
               <div className="p-6 md:w-3/5 md:max-h-[500px] overflow-y-auto">
                 <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
-                  <span>{featuredPost.date}</span>
+                  <span>{featuredPost.pubDate}</span>
                   <span className="mx-2">•</span>
                   <span>{featuredPost.readingTime} min read</span>
                 </div>

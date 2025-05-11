@@ -11,7 +11,7 @@ const postsDirectory = path.join(process.cwd(), 'data/posts');
 export interface Post {
   slug: string;
   title: string;
-  date: string;
+  pubDate: string;
   description: string;
   image?: string;
   tags?: string[];
@@ -30,7 +30,8 @@ export async function getAllPosts(): Promise<Post[]> {
 
   const fileNames = fs.readdirSync(postsDirectory);
 
-  const allPostsRaw = await Promise.all(
+  console.log('[getAllPosts] Files:', fileNames);
+const allPostsRaw = await Promise.all(
     fileNames
       .filter(fileName => fileName.endsWith('.mdx'))
       .map(async fileName => {
@@ -58,13 +59,12 @@ export async function getAllPosts(): Promise<Post[]> {
         
         // If date is just a year, make it January 1st of that year
         if (/^\d{4}$/.test(postDate)) {
-          postDate = `Jan 1 ${postDate}`;
         }
 
         return {
           slug,
           title: data.title,
-          date: postDate,
+          pubDate: postDate,
           description: data.description || '',
           image: data.image || '',
           tags: data.tags || [],
@@ -84,7 +84,7 @@ export async function getAllPosts(): Promise<Post[]> {
   const standardizeDates = (posts: Post[]): Post[] => {
     return posts.map(post => {
       // Create a standardized date for sorting
-      const parsedDate = parseDate(post.date);
+      const parsedDate = parseDate(post.pubDate);
       // Add a sortDate property for internal use
       return {
         ...post,
@@ -162,7 +162,7 @@ export async function getAllPosts(): Promise<Post[]> {
   // Debug: Log posts with their dates for troubleshooting
   console.log('Posts with dates before sorting:');
   postsWithStandardDates.forEach(post => {
-    console.log(`${post.title}: ${post.date} => ${new Date(post.sortDate || 0).toISOString()}`);
+    console.log(`${post.title}: ${post.pubDate} => ${new Date(post.sortDate || 0).toISOString()}`);
   });
 
   // Sort posts by date (newest first) and then by title (alphabetically descending) for same dates
@@ -186,13 +186,18 @@ export async function getAllPosts(): Promise<Post[]> {
   // Debug: Log posts after sorting
   console.log('Posts after sorting by date (newest first):');
   sortedPosts.forEach(post => {
-    console.log(`${post.title}: ${post.date} => ${new Date(post.sortDate || 0).toISOString()}`);
+    console.log(`${post.title}: ${post.pubDate} => ${new Date(post.sortDate || 0).toISOString()}`);
   });
   
   return sortedPosts;
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
+  console.log(`[getPostBySlug] Received slug: '${slug}'`);
+  const fullPath = path.join(postsDirectory, `${slug}.mdx`);
+  console.log(`[getPostBySlug] Full path: ${fullPath}`);
+  const exists = fs.existsSync(fullPath);
+  console.log(`[getPostBySlug] File exists: ${exists}`);
   try {
     const fullPath = path.join(postsDirectory, `${slug}.mdx`);
 
@@ -234,7 +239,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     return {
       slug,
       title: data.title,
-      date: data.date,
+      pubDate: data.pubDate,
       description: data.description || '',
       image: data.image || '',
       tags: data.tags || [],

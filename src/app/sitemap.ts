@@ -8,8 +8,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();
   const postUrls = posts.map((post) => {
   let lastModified: Date;
-  if (post.date && !isNaN(Date.parse(post.date))) {
-    lastModified = new Date(post.date);
+  if (post.pubDate && !isNaN(Date.parse(post.pubDate))) {
+    lastModified = new Date(post.pubDate);
   } else {
     lastModified = new Date();
   }
