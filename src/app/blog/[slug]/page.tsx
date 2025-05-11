@@ -122,15 +122,30 @@ export default async function BlogPostPage({ params }) {
       <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
         <h2 className="text-2xl font-bold mb-4">Share this post</h2>
         <div className="flex space-x-4">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+          <a 
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL || 'https://dotnetevangelist.com'}/blog/${post.slug}`)}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center"
+          >
             Twitter
-          </button>
-          <button className="bg-blue-800 hover:bg-blue-900 text-white px-4 py-2 rounded">
+          </a>
+          <a 
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL || 'https://dotnetevangelist.com'}/blog/${post.slug}`)}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-blue-800 hover:bg-blue-900 text-white px-4 py-2 rounded flex items-center"
+          >
             Facebook
-          </button>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+          </a>
+          <a 
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL || 'https://dotnetevangelist.com'}/blog/${post.slug}`)}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded flex items-center"
+          >
             LinkedIn
-          </button>
+          </a>
         </div>
       </div>
 
