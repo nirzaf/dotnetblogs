@@ -30,7 +30,7 @@ export async function getAllPosts(): Promise<Post[]> {
 
   const fileNames = fs.readdirSync(postsDirectory);
 
-  console.log('[getAllPosts] Files:', fileNames);
+
 const allPostsRaw = await Promise.all(
     fileNames
       .filter(fileName => fileName.endsWith('.mdx'))
@@ -152,7 +152,7 @@ const allPostsRaw = await Promise.all(
     }
     
     // If all parsing attempts fail, return current date to prioritize posts without dates
-    console.warn(`Failed to parse date: ${dateStr}`);
+
     return new Date();
   };
 
@@ -160,9 +160,9 @@ const allPostsRaw = await Promise.all(
   const postsWithStandardDates = standardizeDates(uniquePosts);
   
   // Debug: Log posts with their dates for troubleshooting
-  console.log('Posts with dates before sorting:');
+
   postsWithStandardDates.forEach(post => {
-    console.log(`${post.title}: ${post.pubDate} => ${new Date(post.sortDate || 0).toISOString()}`);
+    
   });
 
   // Sort posts by date (newest first) and then by title (alphabetically descending) for same dates
@@ -184,20 +184,20 @@ const allPostsRaw = await Promise.all(
   });
   
   // Debug: Log posts after sorting
-  console.log('Posts after sorting by date (newest first):');
+
   sortedPosts.forEach(post => {
-    console.log(`${post.title}: ${post.pubDate} => ${new Date(post.sortDate || 0).toISOString()}`);
+    
   });
   
   return sortedPosts;
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
-  console.log(`[getPostBySlug] Received slug: '${slug}'`);
+
   const fullPath = path.join(postsDirectory, `${slug}.mdx`);
-  console.log(`[getPostBySlug] Full path: ${fullPath}`);
+
   const exists = fs.existsSync(fullPath);
-  console.log(`[getPostBySlug] File exists: ${exists}`);
+
   try {
     const fullPath = path.join(postsDirectory, `${slug}.mdx`);
 
