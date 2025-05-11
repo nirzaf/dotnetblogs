@@ -14,7 +14,8 @@
     "cypress:run": "cypress run",
     "test": "cypress run",
     "sync-deps": "./scripts/sync-package-lock.sh",
-    "preinstall": "npm install --package-lock-only --ignore-scripts"
+    "preinstall": "npm install --package-lock-only --ignore-scripts",
+    "workflow": "./scripts/build-run-test-push.sh"
   },
   "dependencies": {
     "autoprefixer": "10.4.16",

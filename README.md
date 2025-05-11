@@ -139,6 +139,30 @@ npx cypress run --spec "cypress/e2e/blog-post-detail.cy.ts"
 npm test
 ```
 
+#### Automated Build-Run-Test-Push Workflow
+
+This project includes an automated workflow script that follows the guidelines in `.windsurf/rules/build-run-test-push.md`. The workflow:
+
+1. Terminates any existing Node.js processes running the development script
+2. Executes `npm run dev`
+3. After changes, builds the project
+4. If the build succeeds, runs the project
+5. Tests the project
+6. If all tests pass, pushes the changes to the repository
+7. Creates a backup branch with a timestamp
+
+To run the workflow:
+
+```bash
+# Run the complete workflow
+npm run workflow
+```
+
+This script is particularly useful for:
+- Ensuring all changes are properly tested before being pushed
+- Creating automatic backup branches after successful builds
+- Maintaining a clean development workflow
+
 #### Test Files
 
 * `navigation-layout.cy.ts` - Tests for navigation, header, footer, and theme toggle
