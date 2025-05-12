@@ -5,6 +5,8 @@ import Image from 'next/image';
 import '../styles/prism.css';
 import React, { useEffect } from 'react';
 import { CustomHTML } from './CustomHTML';
+import { MermaidDiagram } from './MermaidDiagram';
+import mermaid from 'mermaid';
 
 // Define custom components for MDX
 const components = {
@@ -84,23 +86,29 @@ const components = {
     );
   },
   code: (props: React.HTMLAttributes<HTMLElement>) => {
-    const { className = '', children, ...rest } = props;
-    const isBlock = className.startsWith('language-');
-    const language = className.replace('language-', '') || 'javascript';
-    const code = typeof children === 'string' ? children.trim() : '';
-    if (isBlock) {
-      const highlighted = Prism.highlight(code, Prism.languages[language] || Prism.languages.javascript, language);
+    const { className, children, ...rest } = props;
+    const match = /language-(\w+)/.exec(className || '');
+    const language = match ? match[1] : '';
+
+    // Handle Mermaid diagrams
+    if (language === 'mermaid' && typeof children === 'string') {
+      return <MermaidDiagram chart={children} />;
+    }
+
+    if (language) {
       return (
-        <code
-          className={`language-${language}`}
-          dangerouslySetInnerHTML={{ __html: highlighted }}
-          {...rest}
-        />
+        <pre className={`language-${language} rounded-lg overflow-auto p-4 my-6 bg-gray-100 dark:bg-gray-800`}>
+          <code className={`language-${language}`} {...rest}>
+            {children}
+          </code>
+        </pre>
       );
     }
-    // Inline code
+
     return (
-      <code className="bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5 font-mono text-sm" {...props} />
+      <code className="bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded text-sm" {...rest}>
+        {children}
+      </code>
     );
   },
   pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
@@ -138,9 +146,19 @@ interface MDXContentProps {
 
 export function MDXContent({ source }: MDXContentProps) {
   useEffect(() => {
-    // Initialize Prism.js syntax highlighting when component mounts
-    if (typeof window !== 'undefined') {
-      Prism.highlightAll();
+    // Highlight code blocks when component mounts
+    Prism.highlightAll();
+    
+    // Initialize mermaid
+    try {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'default',
+        securityLevel: 'loose',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+      });
+    } catch (error) {
+      console.error('Mermaid initialization error:', error);
     }
   }, [source]);
 

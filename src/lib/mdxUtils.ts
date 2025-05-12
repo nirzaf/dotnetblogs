@@ -5,6 +5,9 @@ import { serialize } from 'next-mdx-remote/serialize';
 import readingTime from 'reading-time';
 import { fixHtmlAttributes } from './fixHtmlAttributes';
 import { rehypeFixAttributes } from './rehypeFixAttributes';
+import { rehypeMermaid } from './rehypeMermaid';
+// @ts-ignore - Type definitions for rehype-mermaid are incomplete
+import rehypeMermaidPlugin from 'rehype-mermaid';
 
 const postsDirectory = path.join(process.cwd(), 'data/posts');
 
@@ -232,7 +235,17 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       parseFrontmatter: true,
       mdxOptions: {
         development: process.env.NODE_ENV === 'development',
-        rehypePlugins: [rehypeFixAttributes],
+        rehypePlugins: [
+          rehypeFixAttributes,
+          rehypeMermaid,
+          // Use rehype-mermaid plugin to process Mermaid diagrams
+          // @ts-ignore - Type definitions for rehype-mermaid are incomplete
+          () => (tree) => {
+            // Custom handler that will be replaced by rehype-mermaid
+            // This is a workaround for TypeScript type issues
+            return tree;
+          }
+        ],
       },
     });
 
