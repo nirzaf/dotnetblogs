@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaMapMarkerAlt, FaMobileAlt, FaPhone, FaEnvelope, FaGithub, FaLinkedin, FaGlobe } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'About - M.F.M Fazrin',
@@ -33,34 +34,25 @@ export default function AboutPage() {
             
             <div className="flex flex-wrap justify-center gap-4 mb-4 text-gray-700 dark:text-gray-300">
               <div className="flex items-center">
-                <i className="fas fa-map-marker-alt mr-2"></i>
+                <FaMapMarkerAlt className="mr-2" />
                 <span>Al Sadd, Doha, Qatar</span>
               </div>
               <div className="flex items-center">
-                <i className="fas fa-mobile-alt mr-2"></i>
+                <FaMobileAlt className="mr-2" />
                 <span>+97433253203</span>
               </div>
               <div className="flex items-center">
-                <i className="fas fa-phone mr-2"></i>
+                <FaPhone className="mr-2" />
                 <span>+94772049123</span>
               </div>
               <div className="flex items-center">
-                <i className="fas fa-envelope mr-2"></i>
+                <FaEnvelope className="mr-2" />
                 <span>mfmfazrin1986@gmail.com</span>
               </div>
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 mb-6 text-blue-600 dark:text-blue-400">
-              <Link 
-                href="https://www.freelancer.com/affiliates/email/79340852/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center hover:underline"
-                aria-label="Hire me on Freelancer"
-              >
-                <i className="fas fa-laptop-code mr-2"></i>
-                <span>Hire me</span>
-              </Link>
+              
               <Link 
                 href="https://github.com/nirzaf" 
                 target="_blank"
@@ -68,7 +60,7 @@ export default function AboutPage() {
                 className="flex items-center hover:underline"
                 aria-label="View my GitHub profile"
               >
-                <i className="fab fa-github mr-2"></i>
+                <FaGithub className="mr-2" />
                 <span>github.com/nirzaf</span>
               </Link>
               <Link 
@@ -78,7 +70,7 @@ export default function AboutPage() {
                 className="flex items-center hover:underline"
                 aria-label="Connect with me on LinkedIn"
               >
-                <i className="fab fa-linkedin mr-2"></i>
+                <FaLinkedin className="mr-2" />
                 <span>linkedin.com/in/mfmfazrin</span>
               </Link>
               <Link 
@@ -88,7 +80,7 @@ export default function AboutPage() {
                 className="flex items-center hover:underline"
                 aria-label="View my portfolio"
               >
-                <i className="fas fa-globe mr-2"></i>
+                <FaGlobe className="mr-2" />
                 <span>Portfolio</span>
               </Link>
             </div>
@@ -340,30 +332,12 @@ export default function AboutPage() {
                   <strong>P:</strong> +97433253203 | <strong>M:</strong> +94772049123
                 </p>
                 <p className="text-gray-600 dark:text-gray-400">
-                  <strong>E:</strong> quadrate.lk@gmail.com
+                  <strong>E:</strong> info@dotnetevangelist.net
                 </p>
                 <p className="text-gray-600 dark:text-gray-400">
-                  <strong>A:</strong> Al Sadd Street, Doha, Qatar, Doha, 23154
+                  <strong>A:</strong> Al Sadd Street, Doha, Qatar, Doha
                 </p>
-              </div>
-              
-              <div className="flex items-center">
-                <Image 
-                  src="https://www.freelancer.com/static/css/images/landingpage/hireme-widget-builder/fl-bird-icon.png" 
-                  alt="Freelancer icon" 
-                  width={20} 
-                  height={20} 
-                  className="mr-2"
-                />
-                <Link 
-                  href="https://www.freelancer.com/affiliates/email/79340852/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  Hire me on Freelancer.com
-                </Link>
-              </div>
+              </div>        
             </div>
           </div>
         </div>
